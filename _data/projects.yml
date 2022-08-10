@@ -1,16 +1,23 @@
 # Projects
 # uncomment the urls if you wish to display them, and add your own URL
 
-# jazznotes.io
-- project: jazznotes.io
-  role: Founder & Primary Developer
-  duration: 2012 &mdash; Present
+# 
+- project: <a href="softmanbot.html" >Control of a 3-axis Cartesian Robot in a Robotic Cell</a>
+  role: Istituto Italiano di Tecnologia (IIT) - <a href="https://softmanbot.eu" target="_blank">SoftManBot</a> (Horizon 2020 project)
+  duration: 2022
   # url: "#"
-  description: Jazz Notes is an open source node/ember app that helps you keep track of your music compositions and new ideas.
+  description: <ul class="resume-item-list"><li>Developed a ROS package to integrate igus cartesian robot in the robotic cell</li><li>Simulated the robot in Gazebo</li></ul>
 
-# Springfield Community Outreach Group
-- project: Springfield Community Outreach Group
-  role: Co-Founder & Organizer
-  duration: 2007 &mdash; Present
+# 
+- project: <a href="wrs2020.html">Participated in World Robot Summit's robotic challenge</a>
+  role: Aichi, Japan
+  duration: 2021
   # url: "#"
-  description: SCOG is a local monthly meetup in Springfield where we share opportunities to volunteer in the community and organize support for families and neighborhoods in need of assistance that the community can provide.
+  description: <ul class="resume-item-list"><li>Aim of the project was to develop a two-arm robotic cell to perform industrial assembling tasks autonomously</li><li>Designed gripper for the arms</li><li>Collaborated in the development of the ROS package for the cell</li><li>Collaborated in the development of the vision-based Object Detection module</li></ul>
+
+# 
+- project: <a href=""></a>
+  role: Aichi, Japan
+  duration: 2021
+  # url: "#"
+  description: <ul class="resume-item-list"><li>Aim of the project was to develop a two-arm robotic cell to perform industrial assembling tasks autonomously</li><li>Designed gripper for the arms</li><li>Collaborated in the development of the ROS package for the cell</li><li>Collaborated in the development of the vision-based Object Detection module</li></ul>
