@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+  {% include head.html %}
+
+  <body class="theme-{% if site.resume_theme %}{{ site.resume_theme }}{% endif %}">
+
+    <div class="wrapper" itemscope itemtype="http://schema.org/Person">
+      
+      <header class="page-header">
+        <!-- Your name is defined in the _config.yml file -->
+        <h1 class="header-name" itemprop="name">Participation in the Industrial Robotic Challenge of World Robot Summit, 2020</h1>
+
+        <div align="center" style="padding-top: 50px; padding-bottom:10px;">
+          <img width="100%" src="images/wrs_IMG33.jpg"/>
+        </div>
+        <div class="executive-summary" itemprop="description" align="justify">
+          <p>The <a href="https://wrs.nedo.go.jp/en/" target="_blank">World Robot Summit</a> (WRS) consists of two parts: World Robot Challenge (WRC), a robot competition in which teams from all over the world compete in 4 categories where use of robots is highly expected; and the World Robot Expo (WRE), an exhibition that features advanced robots and robotic technologies and provides a glimpse of robots working in the present and in the future. </p>
+          <p>Our team as the Industrial Robotics Facility of IIT took part in the industrial robotics challenge of WRS2020 held in Aichi, Japan. The competitors supposed to develop multi-arm robotic cells to perform various assembling task such as insertion of bearing, shaft, pulleys, and belts as well as fastening screws. The parts were provided within a tray in an unknown configuration by AGVs.</p>
+        </div>
+        <div align="center" style="padding-top: 50px; padding-bottom:10px;">
+          <img width="100%" src="images/wrs_schematics.jpg"/>
+        </div>
+        <div align="center">
+          <p>The robotic cell should used vision to recognized the parts within the tray, and according to the assembly scenarios, it should obtain the proper gripping point on the desired part. In the following figures, you can see parts provided in the tray and also the Taskboard (middle figure) and Assembly parts.</p>
+        </div>
+        <div align="center">
+          <img width="32%" src="images/wrs_tray.png"/>
+          <img width="64.5%" src="images/wrs_tasks.png"/>
+        </div>
+        <div class="executive-summary" itemprop="description" align="justify">
+          Each arms has a Intel RealSense camera mounted on its gripper. The cameras are used in detection of the parts, alingment of the part relative to the others, and alignment of tools in the workspace. We have developed an object detection module using the gathered images of the specific parts used in the challenge. Below, you can see an example of object detection model.
+        </div>
+        <div align="center" style="padding-top: 10px;">
+          <img width="50%" src="images/wrs_object_detection.jpg"/>
+        </div>
+        <div class="executive-summary" itemprop="description" align="justify">
+          One of my responsibilities in this project was to design and build the gripper for each of the arms. I designed a gripper having changable fingers so the arms have the capability to handle parts having various shapes and sizes. You can see the gripper designed for one of the arms.
+        </div>
+        <div align="center" style="padding-top: 10px;">
+          <img width="50%" src="images/wrs_gripper.jpg"/>
+          <img width="50%" src="images/wrs_gripper_real.jpg"/>
+        </div>
+
+        <h2 >Other Pictures</h2>
+        <div align="center">
+          <img width="80%" src="images/wrs_assembled.jpg"/>
+          <img width="80%" src="images/wrs_IMG27.jpg"/>
+          <img width="80%" src="images/WRS_IMG100.jpeg"/>
+          <img width="80%" src="images/wrs_IMG43.jpg"/>
+          <img width="80%" src="images/ADVR_Competition_Japan_17528.jpg"/>
+          <img width="80%" src="images/ADVR_Competition_Japan_17523.jpg"/>
+        </div>
+      </header>
+
+
+      {% if site.resume_print_social_links %}
+      <!-- begin Print Social Links -->
+      <section class="content-section print-only">
+
+        <header class="section-header">
+          <h2>Social Links</h2>
+        </header>
+
+        <div class="resume-item">
+        {% include print-social-links.html %}
+        </div>
+
+      </section>
+      <!-- end Print Social Links -->
+      {% endif %}
+
+      <footer class="page-footer">
+        <p class="footer-line">Made by <a href="http://farshad-heravi.github.io">Farshad N. Heravi</a>.</p>
+      </footer>
+
+    </div>
+
+  </body>
+
+</html>
