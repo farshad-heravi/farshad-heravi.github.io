@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+  {% include head.html %}
+
+  <body class="theme-{% if site.resume_theme %}{{ site.resume_theme }}{% endif %}">
+
+    <div class="wrapper" itemscope itemtype="http://schema.org/Person">
+      
+      <header class="page-header">
+        <!-- Your name is defined in the _config.yml file -->
+        <h1 class="header-name" itemprop="name">Morphing Omni-Direction Parallel Mechanism</h1>
+
+        <div align="center" style="padding-top: 50px; padding-bottom:10px;">
+          <img width="100%" src="images/mopm_1.jpg"/>
+        </div>
+        <div class="executive-summary" itemprop="description" align="justify">
+          <p>In this project, we derived the equations of the motion of a parallel, flexible, and under-actuated mechanism which was patented previously. The mechanism is a wind delivery system which captures the wind from every directions and then funnels the flow to the ground-level generator. In order to watch the experiment vidoe of the mechanism, please refer to this link on youtube.</p>
+        </div>
+        
+      </header>
+
+
+      {% if site.resume_print_social_links %}
+      <!-- begin Print Social Links -->
+      <section class="content-section print-only">
+
+        <header class="section-header">
+          <h2>Social Links</h2>
+        </header>
+
+        <div class="resume-item">
+        {% include print-social-links.html %}
+        </div>
+
+      </section>
+      <!-- end Print Social Links -->
+      {% endif %}
+
+      <footer class="page-footer">
+        <p class="footer-line">Made by <a href="http://farshad-heravi.github.io">Farshad N. Heravi</a>.</p>
+      </footer>
+
+    </div>
+
+  </body>
+
+</html>

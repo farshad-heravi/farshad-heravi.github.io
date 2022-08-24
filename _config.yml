@@ -45,13 +45,13 @@ resume_section_associations:    true
 # Resume social links
 # uncomment the options you wish to display, and add your own URL
 resume_social_links:
-  resume_github_url:            "https://https://github.com/farshad-heravi"
+  resume_github_url:            "https://github.com/farshad-heravi"
   resume_twitter_url:           ""
   resume_dribbble_url:          ""
   # resume_facebook_url:          "insert Facebook URL here"
-  resume_linkedin_url:          "https://www.linkedin.com/in/fheravi"
+  resume_linkedin_url:          "https://linkedin.com/in/fheravi"
   # resume_instagram_url:         "insert your Instagram URL here"
-  resume_website_url:           "http://https://farshad-heravi.github.io"
+  resume_website_url:           "http://farshad-heravi.github.io"
   resume_medium_url:            ""
 resume_print_social_links:      true
 
