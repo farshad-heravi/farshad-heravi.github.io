@@ -20,7 +20,7 @@ resume_contact_email:           "Farshad.NozadHeravi@iit.it"
 resume_contact_telephone:       "(+39) 379 210 8830"
 resume_contact_address:         "Genoa, Italy"
 
-resume_header_contact_info:     "742 Evergreen Terrace, Springfield • 555-7334 • lisasimpson@youremailaddress.com"
+resume_header_contact_info:     "Genova, Italy • Farshad.NozadHeravi@iit.it"
 display_header_contact_info:    "false"
 
 resume_header_intro: "<p>I have a keen interest in working with robots and having them perform various tasks autonomously. This goal requires me to work on several aspects such as Robot Dynamics, Control, Perception, and Learning. I have been worked in different projects for each of these requirements. Explore the webpage to get familiar with the project and the tools I have used.</p>"
@@ -40,7 +40,7 @@ resume_section_skills:          true
 resume_section_recognition:     true
 resume_section_links:           true
 resume_section_associations:    true
-# resume_section_interests:       true
+resume_section_interests:       true
 
 # Resume social links
 # uncomment the options you wish to display, and add your own URL

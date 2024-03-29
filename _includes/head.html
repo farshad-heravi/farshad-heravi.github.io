@@ -15,4 +15,14 @@
   <link rel="stylesheet" href="css/main.css">
   <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
   <link rel="icon" type="image/x-icon" href="favicon.png" />
+
+  <script>
+    function cpp_li_onmouseenter(x){
+      document.getElementById("cpp_li_descriptions").style.display = "block";
+    }
+    function cpp_li_onmouseleave(x){
+      document.getElementById("cpp_li_descriptions").style.display = "none";
+    }
+  </script>
+  <style type="text/css"></style>
 </head>

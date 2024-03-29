@@ -1,12 +1,41 @@
 # Skills
 # Organizational leadership
-- skill: Organizational leadership
-  description: I have several years of experience leading organziations from community groups to business departments. From public speaking, to mentoring, to coordination of people and events, I can lead in any context.
+- skill: Programming
+  description: <ul style="display:flex;">
+      <li style="min-width:250px;" id="cpp_li" onmouseenter="cpp_li_onmouseenter(this)" onmouseleave="cpp_li_onmouseleave(this)" >C++</li>
+      <li style="margin-right:30%; display:none;" id="cpp_li_descriptions">CCCCC</li>
+      <li style="min-width:250px;">Python</li>
+      <li style="min-width:250px;"">Matlab</li></ul><ul style="display:flex;">
+      <li style="min-width:250px;">C#</li>
+      <li style="min-width:250px;">Android</li>
+    </ul>
 
 # Communications strategy
-- skill: Communications strategy
-  description: Content and marketing strategy,
+- skill: Robotics Software
+  description: <ul style="display:flex;">
+      <li style="min-width:250px;">ROS</li>
+      <li style="min-width:250px;">Gazebo</li>
+      <li style="min-width:250px;">Choreonoid</li></ul><ul>
+      <li style="min-width:250px;">MoveIt</li>
+    </ul>
 
 # Digital content development and creation
-- skill: Digital content development and creation
-  description: Copy writing, graphic design, web design, front-end web development, print design
+- skill: Machine Learning
+  description: <p style="margin-left:20px;">Computer Vision</p>
+          <ul style="display:flex; margin-left:30px;">
+            <li style="min-width:250px;">Image Classification</li>
+            <li style="min-width:250px;">Object Detection</li>
+            <li style="min-width:250px;">YOLO</li></ul><ul style="display:flex; margin-left:30px;">
+            <li style="min-width:250px;">Faster R-CNN</li>
+          </ul>
+          # <p style="margin-left:20px;">Reinforcement Learning</p>
+
+- skill: Other Skills
+  description: <ul style="display:flex; margin-left:30px;">
+            <li style="min-width:250px;">Git</li>
+            <li style="min-width:250px;">Linux</li>
+            <li style="min-width:250px;">LaTex</li></ul><ul style="display:flex; margin-left:30px;">
+            <li style="min-width:250px;">CAD design</li>
+            <li style="min-width:250px;">3D printing</li>
+          </ul>
+          # <p style="margin-left:20px;">Reinforcement Learning</p>

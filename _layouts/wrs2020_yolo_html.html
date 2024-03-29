@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+
+  {% include head.html %}
+
+  <body class="theme-{% if site.resume_theme %}{{ site.resume_theme }}{% endif %}">
+
+    <div class="wrapper" itemscope itemtype="http://schema.org/Person">
+      
+      <header class="page-header">
+        <!-- Your name is defined in the _config.yml file -->
+        <h1 class="header-name" itemprop="name">Development of a Computer Vision Module using YOLO</h1>
+
+        <div align="center" style="padding-top: 50px; padding-bottom:10px;">
+          <img width="100%" src="images/wrs_expo.jpg"/>
+        </div>
+
+        <div class="executive-summary" itemprop="description" align="justify">
+          <p>The <a href="https://wrs.nedo.go.jp/en/" target="_blank">World Robot Summit</a> (WRS) consists of two parts: World Robot Challenge (WRC), a robot competition in which teams from all over the world compete in 4 categories where use of robots is highly expected; and the World Robot Expo (WRE), an exhibition that features advanced robots and robotic technologies and provides a glimpse of robots working in the present and in the future. </p>
+          <p>Our team as the Industrial Robotics Facility of IIT took part in the industrial robotics challenge of WRS2020 held in Aichi, Japan. The competitors supposed to develop multi-arm robotic cells to perform various assembling task such as insertion of bearing, shaft, pulleys, and belts as well as fastening screws. The parts were provided within a tray in an unknown configuration by AGVs.</p>
+        </div>
+
+        <div align="center" style="padding-top: 10px; padding-bottom:10px;">
+          <img width="100%" src="images/wrs_IMG33.jpg"/>
+        </div>
+
+        <div class="executive-summary" itemprop="description" align="justify">
+          <p>As mentioned, the parts are provided to the robotic cell in a previously unknown configuration within a tray using AGVs. The first task of the robotic cell is to detect the tray as well as the position and type of the parts inside it, as shown in the following figure.</p>
+        </div>
+        
+        <div align="center" style="padding-top: 10px; padding-bottom:10px;">
+          <img width="50%" src="images/wrs_tray.png"/>
+        </div>
+        
+        <div class="executive-summary" itemprop="description" align="justify">
+          <p>Each arms has a Intel RealSense camera mounted on its gripper. The cameras are used in detection of the parts, alingment of the part relative to the others, and alignment of tools in the workspace. We have developed an object detection module using the gathered images of the specific parts used in the challenge.</p>
+          <p>YOLO technique is used in order to detect the custom objects for this purpose. To train the model, a series of pictures from the mechanical parts have been gathered. The following figure shows a sample of images provided to the model.</p>
+        </div>
+        <div align="center" style="padding-top: 10px;">
+          <img width="50%" src="images/wrs_yolo_dataset_example.png"/>
+        </div>
+        
+        <div class="executive-summary" itemprop="description" align="justify">
+          <p>Then, the images were labeled in order to be provided into the YOLO model. Below, you can see some examples of labeled images.</p>
+        </div>
+        
+        <div align="center" style="padding-top: 10px;">
+          <img width="50%" src="images/wrs_image_labeled_sample.jpeg"/>
+        </div>
+
+        <div class="executive-summary" itemprop="description" align="justify">
+          <p>Then, the pre-trained YOLOv5 model has been retrained on our custom dataset. The Google Colab was used to trained the model. The training progress report can be shown in the following figure. The figures show the loss of Object Detection, Classification, and Bounding Boxes over 300 epochs, respectively.</p>
+        </div>
+
+        <div align="center" style="padding-top: 10px;">
+          <img width="80%" src="images/wrs_obj_losses.png"/></br>
+          <img width="80%" src="images/wrs_cls_losses.png"/>
+          <img width="80%" src="images/wrs_box_losses.png"/>
+        </div>
+
+        <div class="executive-summary" itemprop="description" align="justify">
+          <p>Finally, you can see an example of the inference of the trained model on a test image in the following figure.</p>
+        </div>
+
+        <div align="center" style="padding-top: 10px;">
+          <img width="46%" src="images/wrs_raw_sample.png"/>
+          <img width="46%" src="images/wrs_detection_sample1.png"/>
+        </div>
+      </header>
+
+
+      {% if site.resume_print_social_links %}
+      <!-- begin Print Social Links -->
+      <section class="content-section print-only">
+
+        <header class="section-header">
+          <h2>Social Links</h2>
+        </header>
+
+        <div class="resume-item">
+        {% include print-social-links.html %}
+        </div>
+
+      </section>
+      <!-- end Print Social Links -->
+      {% endif %}
+
+      <footer class="page-footer">
+        <p class="footer-line">Made by <a href="http://farshad-heravi.github.io">Farshad N. Heravi</a>.</p>
+      </footer>
+
+    </div>
+
+  </body>
+
+</html>

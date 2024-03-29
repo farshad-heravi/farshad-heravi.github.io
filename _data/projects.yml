@@ -13,7 +13,14 @@
   role: Aichi, Japan
   duration: 2021
   # url: "#"
-  description: <ul class="resume-item-list"><li>Aim of the project was to develop a two-arm robotic cell to perform industrial assembling tasks autonomously</li><li>Designed gripper for the arms</li><li>Collaborated in the development of the ROS package for the cell</li><li>Collaborated in the development of the vision-based Object Detection module</li></ul>
+  description: <ul class="resume-item-list"><li>Aim of the project was to develop a two-arm robotic cell to perform industrial assembling tasks autonomously</li><li>Designed grippers for the arms</li><li>Collaborated in the development of the ROS package for the cell</li><li>Collaborated in the development of the vision-based Object Detection module</li></ul>
+
+# 
+- project: <a href="wrs2020_yolo.html">A Computer-vision-based Module for Object Detection of Mechanical Parts</a>
+  role: IIT, Italy
+  duration: 2021
+  # url: "#"
+  description: <ul class="resume-item-list"><li>Aim of the project was to develop a two-arm robotic cell to perform industrial assembling tasks autonomously</li><li>Designed grippers for the arms</li><li>Collaborated in the development of the ROS package for the cell</li><li>Collaborated in the development of the vision-based Object Detection module</li></ul>
 
 # 
 - project: <a href="mopm.html">Dynamic Analysis of a Morphing Omni-Direction Parallel Mechanism</a>
@@ -21,3 +28,10 @@
   duration: 2021
   # url: "#"
   description: <ul class="resume-item-list"><li>Derived euqations of motion for the <a href="https://patents.google.com/patent/US20210340763A1/en" target="_blank">us-patented mechanism</a></li><li>Implemented the model in Python</li></ul>
+
+# 
+- project: <a href="morphing_wing.html">SMA-actuated Morphing-Wing Mechanism</a>
+  role: University of Tehran, Iran
+  duration: 2017
+  # url: "#"
+  description: <ul class="resume-item-list"><li>Used Adaptive-Neuro Fuzzy Inference System (ANFIS) to model the system</a></li><li>Performed Hardware-in-the-Loop experiments</li></ul>
