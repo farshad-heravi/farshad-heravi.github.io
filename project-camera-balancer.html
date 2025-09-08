@@ -112,7 +112,8 @@
                              'SW & HW schematics',
                              'System architecture diagram showing the complete control loop of the camera balancer. The software section includes Visual Module, Kalman Filter, and PID Controller that process data from cameras and IMUs. The hardware section contains the sensors (cameras, IMUs) and actuators (roll and pitch DC motors). This closed-loop system enables real-time stabilization by combining visual and inertial feedback to actively compensate for rover movements.',
                              ['media/images/DDB_ros_map.png'],
-                             ['ROS node architecture showing the distributed system where camera and vision nodes run on the rover\'s NUC PC, while the controller node runs on the Arduino board. The nodes communicate over serial communication, with the PC handling sensor data processing and the Arduino executing real-time control algorithms for motor actuation.'])">
+                             ['ROS node architecture showing the distributed system where camera and vision nodes run on the rover\'s NUC PC, while the controller node runs on the Arduino board. The nodes communicate over serial communication, with the PC handling sensor data processing and the Arduino executing real-time control algorithms for motor actuation.'],
+                             ['ROS Node Architecture'])">
                         <img src="media/images/DDB_schematics.png" 
                         alt="The SW & HW schematics">
                         
@@ -126,7 +127,8 @@
                         'Real-time demonstration of the camera balancer installed on Spot robot, stabilizing the camera platform while the robot moves over obstacles. The performance of the system compared to the wheeled rover was significantly worse due to impulse accelerations caused by the robot\'s movement.',
                         ['media/videos/testing_ddb_on_Go2.mp4', 'media/videos/testing_ddb_on_rover.mp4'],
                         ['Testing the camera balancer on Go2 legged robot. The test was aimed to record sensor reading while the robot walk over flat surface in order to improve the performance of the controller.',
-                        'Testing the camera balancer on wheeled rover. The test was aimed to record videos from the walls of Pompeii historical site in order to perform defect detection.'])")>
+                        'Testing the camera balancer on wheeled rover. The test was aimed to record videos from the walls of Pompeii historical site in order to perform defect detection.'],
+                        ['Testing on Go2 Robot', 'Testing on Wheeled Rover'])")>
                         <img src="media/images/testing_ddb_thumbnail.png" alt="Camera balancer in action">
                         <div class="image-description">
                             <h4 style="text-align: center;">Camera Balancer in Action</h4>
@@ -185,147 +187,6 @@
     </footer>
 
     <!-- JavaScript for Modal Functionality -->
-    <script>
-        let currentImages = [];
-        let currentImageIndex = 0;
-        let currentDescriptions = [];
-        
-        function openModal(imageSrc, title, description, additionalImages = [], additionalDescriptions = []) {
-            const modal = document.getElementById('imageModal');
-            const modalImage = document.getElementById('modalImage');
-            const modalTitle = document.getElementById('modalTitle');
-            const modalText = document.getElementById('modalText');
-            
-            // Set up images array
-            currentImages = [imageSrc, ...additionalImages];
-            currentImageIndex = 0;
-            
-            // Set up descriptions array
-            currentDescriptions = [description, ...additionalDescriptions];
-            
-            // Update modal content
-            updateModalImage();
-            updateModalDescription();
-            
-            // Update counter and dots
-            updateImageCounter();
-            updateDotsIndicator();
-            
-            // Show/hide navigation based on number of images
-            const prevBtn = document.querySelector('.modal-prev');
-            const nextBtn = document.querySelector('.modal-next');
-            const navBtns = document.querySelectorAll('.modal-nav-btn');
-            
-            if (currentImages.length > 1) {
-                navBtns.forEach(btn => btn.style.display = 'block');
-            } else {
-                navBtns.forEach(btn => btn.style.display = 'none');
-            }
-            
-            modal.style.display = 'flex';
-            document.body.style.overflow = 'hidden';
-            
-            // Add fade-in animation
-            setTimeout(() => {
-                modal.classList.add('modal-active');
-            }, 10);
-        }
-        
-        function updateModalImage() {
-            const modalImage = document.getElementById('modalImage');
-            const modalVideo = document.getElementById('modalVideo');
-            const currentSrc = currentImages[currentImageIndex];
-            
-            // Check if the current item is a video
-            const isVideo = currentSrc.match(/\.(mp4|avi|mov|wmv|flv|webm)$/i);
-            
-            if (isVideo) {
-                // Show video, hide image
-                modalImage.style.display = 'none';
-                modalVideo.style.display = 'block';
-                modalVideo.src = currentSrc;
-            } else {
-                // Show image, hide video
-                modalVideo.style.display = 'none';
-                modalImage.style.display = 'block';
-                modalImage.src = currentSrc;
-            }
-        }
-        
-        function updateModalDescription() {
-            const modalTitle = document.getElementById('modalTitle');
-            const modalText = document.getElementById('modalText');
-            
-            // Use the first description as the title for all images
-            modalTitle.textContent = modalTitle.textContent || 'Image Gallery';
-            
-            // Update description based on current image
-            if (currentDescriptions[currentImageIndex]) {
-                modalText.textContent = currentDescriptions[currentImageIndex];
-            }
-        }
-        
-        function updateImageCounter() {
-            document.getElementById('currentImageIndex').textContent = currentImageIndex + 1;
-            document.getElementById('totalImages').textContent = currentImages.length;
-        }
-        
-        function updateDotsIndicator() {
-            const dotsContainer = document.getElementById('dotsContainer');
-            dotsContainer.innerHTML = '';
-            
-            for (let i = 0; i < currentImages.length; i++) {
-                const dot = document.createElement('span');
-                dot.className = `dot ${i === currentImageIndex ? 'active' : ''}`;
-                dot.onclick = () => goToImage(i);
-                dotsContainer.appendChild(dot);
-            }
-        }
-        
-        function changeImage(direction) {
-            currentImageIndex = (currentImageIndex + direction + currentImages.length) % currentImages.length;
-            updateModalImage();
-            updateModalDescription();
-            updateImageCounter();
-            updateDotsIndicator();
-        }
-        
-        function goToImage(index) {
-            currentImageIndex = index;
-            updateModalImage();
-            updateModalDescription();
-            updateImageCounter();
-            updateDotsIndicator();
-        }
-        
-        function closeModal() {
-            const modal = document.getElementById('imageModal');
-            modal.classList.remove('modal-active');
-            
-            setTimeout(() => {
-                modal.style.display = 'none';
-                document.body.style.overflow = 'auto';
-                currentImages = [];
-                currentImageIndex = 0;
-                currentDescriptions = [];
-            }, 300);
-        }
-        
-        // Close modal with Escape key
-        document.addEventListener('keydown', function(event) {
-            if (event.key === 'Escape') {
-                closeModal();
-            }
-        });
-        
-        // Arrow key navigation
-        document.addEventListener('keydown', function(event) {
-            if (event.key === 'ArrowLeft') {
-                if (currentImages.length > 1) changeImage(-1);
-            } else if (event.key === 'ArrowRight') {
-                if (currentImages.length > 1) changeImage(1);
-            }
-        });
-    </script>
+    <script src="modal-gallery.js"></script>
 </body>
 </html>

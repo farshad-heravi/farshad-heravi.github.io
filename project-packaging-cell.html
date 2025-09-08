@@ -129,5 +129,43 @@
         </div>
     </footer>
 
+    <!-- Image Modal Overlay -->
+    <div id="imageModal" class="modal-overlay" onclick="closeModal()">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <span class="close-btn" onclick="closeModal()">&times;</span>
+            
+            <!-- Media Container -->
+            <div class="modal-media-container">
+                <img id="modalImage" src="" alt="Modal Image" style="display: none;">
+                <video id="modalVideo" controls style="display: none;">
+                    <source src="" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                
+                <!-- Navigation Arrows -->
+                <button class="modal-nav-btn modal-prev" onclick="changeImage(-1)">&lt;</button>
+                <button class="modal-nav-btn modal-next" onclick="changeImage(1)">&gt;</button>
+            </div>
+            
+            <!-- Image Counter -->
+            <div class="image-counter">
+                <span id="currentImageIndex">1</span> / <span id="totalImages">1</span>
+            </div>
+            
+            <!-- Dots Indicator -->
+            <div class="dots-indicator" id="dotsContainer">
+                <span class="dot active" onclick="goToImage(0)"></span>
+            </div>
+            
+            <div class="modal-description">
+                <h3 id="modalTitle"></h3>
+                <p id="modalText"></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript for Modal Functionality -->
+    <script src="modal-gallery.js"></script>
+
 </body>
 </html>
