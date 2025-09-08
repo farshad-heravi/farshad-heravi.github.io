@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hand Gesture Detection | Farshad Nozad Heravi</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+    <header class="main-header">
+        <div class="container">
+            <a href="index.html" class="logo">Farshad Nozad Heravi</a>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">About Me</a></li>
+                    <li><a href="projects.html" class="active">Projects</a></li>
+                    <li><a href="skills.html">Skills</a></li>
+                    <li><a href="resume.html">Resume</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div class="project-page-container">
+            <!-- Project Header -->
+            <section class="project-header">
+                <h1>Advanced Hand Gesture Detection System</h1>
+                <p class="subtitle">A Production-Ready Machine Learning System for Real-Time Gesture Recognition with 99.47% Accuracy</p>
+                <div class="project-info-bar">
+                    <div><strong><i class="fas fa-calendar-alt"></i> Timeline:</strong> 2024</div>
+                    <div><strong><i class="fas fa-flask"></i> Type:</strong> Machine Learning / Computer Vision / MLOps</div>
+                    <div><strong><i class="fas fa-user"></i> Role:</strong> Lead Developer & ML Engineer</div>
+                </div>
+            </section>
+
+            <!-- Hero Media -->
+            <div class="video-container">
+                <iframe width="100%" height="450" style="max-width: 800px; border-radius: 8px; display: block; margin: 0 auto; border: 1px solid #ddd;"
+                    src="https://www.youtube.com/embed/JbhiD4TYPnU" 
+                    title="Hand Gesture Detection Demo"
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen>
+                </iframe>
+            </div>
+
+            <!-- Project Overview -->
+            <section class="project-overview">
+                <h2>Project Overview</h2>
+                <div class="overview-grid">
+                    <div>
+                        <h3><i class="fas fa-bullseye"></i> The Challenge & My Objective</h3>
+                        <p style="text-align: justify;">
+                            Traditional interfaces for controlling robots, like joysticks or keyboards, can be cumbersome and non-intuitive. For seamless human-robot collaboration, especially in dynamic industrial environments, a more natural communication method is needed.
+                        </p>
+                        <p style="text-align: justify;">
+                            The objective of this project was to develop a <b>production-ready hand gesture detection system</b> capable of recognizing 10 distinct hand gestures in real-time with exceptional accuracy. This comprehensive machine learning project featured a complete end-to-end pipeline from data collection to deployment, utilizing advanced techniques from computer vision, deep learning, and software engineering fields.
+                        </p>
+                    </div>
+                    <div>
+                        <h3><i class="fas fa-check-circle"></i> Key Achievements</h3>
+                        <ul>
+                            <li><b>99.47% Test Set Accuracy</b> - Reliable detections with production-grade performance</li>
+                            <li><b>Real-time Processing</b> - Optimized for 25+ FPS with <50ms latency</li>
+                            <li><b>8 Neural Network Architectures</b> - Comprehensive model comparison study</li>
+                            <li><b>Professional Codebase</b> - Production-ready with modern software practices</li>
+                            <li><b>Complete MLOps Pipeline</b> - Data collection, training, evaluation, and deployment</li>
+                            <li><b>2,500 Sample Dataset</b> - Balanced dataset with advanced augmentation</li>
+                        </ul>
+                        <h3><i class="fas fa-cogs"></i> Tech Stack</h3>
+                        <div class="project-tags">
+                            <span class="tag">PyTorch</span> <span class="tag">MediaPipe</span> <span class="tag">OpenCV</span> <span class="tag">Weights & Biases</span> <span class="tag">YAML</span> <span class="tag">CUDA</span> <span class="tag">pytest</span> <span class="tag">Hydra</span>
+                        </div>
+                    </div>
+                </div>
+                 <!-- My Contribution Section -->
+                <div style="margin-top: 2rem;">
+                     <h3><i class="fas fa-user-cog"></i> My Contribution</h3>
+                     <p style="text-align: justify;">I executed this comprehensive project from A to Z, developing a production-ready machine learning system. The project included designing 8 different neural network architectures, implementing an interactive data collection GUI, engineering 39 discriminative features from hand landmarks, conducting systematic model evaluation, and building a complete MLOps pipeline with Weights & Biases integration. Future work includes integrating this system with a UR5e robotic arm using <a href="https://moveit.picknik.ai/humble/doc/examples/realtime_servo/realtime_servo_tutorial.html" target="_blank" >MoveIt Servo</a> for real-time robot control.</p>
+                </div>
+            </section>
+            
+            <!-- Technical Deep Dive -->
+            <section class="technical-deep-dive">
+                <h2>Technical Deep Dive</h2>
+                <div class="deep-dive-grid">
+                    <div class="dive-item">
+                        <h3>Professional Data Collection & Processing Pipeline</h3>
+                        <p style="text-align: justify;">I developed a <b>comprehensive data collection system</b> featuring an interactive GUI with real-time feedback for auto-labeled data collection in both single and continuous modes. The dataset consists of <b>2,500 samples (250 per gesture class)</b> for 10 distinct hand gestures, collected under various lighting and environmental conditions. I implemented <b>automated quality checks and statistics</b> to ensure data integrity, plus <b>advanced augmentation techniques</b> including geometric transformations (rotation, scaling, translation), photometric adjustments (brightness, contrast, noise), and feature-level augmentation. The system includes comprehensive data validation and engineered <b>39 discriminative features</b> from MediaPipe hand landmarks, including distances between key landmarks, angles between fingers, normalized finger lengths, and hand orientation.</p>
+                    </div>
+                    <div class="dive-item">
+                        <h3>Comprehensive Neural Network Architecture Study</h3>
+                        <p style="text-align: justify;">I conducted a <b>systematic evaluation of 8 different neural network architectures</b>, ranging from ultra-lightweight (10K parameters) to massive models (43M parameters). This comprehensive study included Tiny (10K), Small (27K), Medium (351K), Large (6.6M), XLarge (26.4M), Deep (1.7M), Wide (105M), and Massive (43M) parameter models. I implemented <b>advanced regularization techniques</b> including dropout, weight decay, and early stopping, with complete <b>Weights & Biases integration</b> for experiment tracking. The study revealed that models with 25K-350K parameters offer optimal balance between accuracy and efficiency, with the Small model (27K parameters) achieving perfect accuracy with the fastest inference time.</p>
+                    </div>
+                    <div class="dive-item">
+                        <h3>Advanced Training & Optimization</h3>
+                        <p style="text-align: justify;">I implemented <b>sophisticated training procedures</b> including cosine annealing with warm restarts for learning rate scheduling, comprehensive overfitting analysis, and detailed convergence pattern studies. The training process utilized <b>NVIDIA RTX A4000 GPU</b> with CUDA acceleration, achieving ~15 minutes training time for the complete architecture comparison. I conducted <b>detailed overfitting analysis</b> revealing that most models show signs of overfitting to the validation set, with the Deep model (2.7M parameters) demonstrating the healthiest training with the largest train/validation loss gap (0.073). All models achieved 100% validation accuracy within 2-36 epochs, with rapid convergence patterns indicating dataset simplicity.</p>
+                    </div>
+                </div>
+                
+                <!-- System Architecture Flowchart -->
+                <div class="architecture-flowchart" style="margin: 2rem 0; text-align: center;">
+                    <h3 style="margin-bottom: 1.5rem; color: var(--primary-color);"><i class="fas fa-sitemap"></i> Complete System Architecture Pipeline</h3>
+                    <div style="background: var(--card-bg-color); padding: 2rem; border-radius: 12px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); border: 1px solid var(--border-color);">
+                        <img src="media/images/project_hand_gesture_flowchart.png" 
+                             alt="Hand Gesture Detection System Architecture Flowchart" 
+                             style="width: 100%; max-width: 800px; height: auto; border-radius: 8px;">
+                        <p style="margin-top: 1rem; color: #666; font-size: 0.9rem; text-align: center;">
+                            <strong>Complete ML Pipeline:</strong> From camera input through MediaPipe hand detection, feature engineering, deep neural network processing, to final gesture prediction output.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Performance Analysis -->
+            <section class="performance-analysis">
+                <h2>Comprehensive Performance Analysis & Results</h2>
+                <div class="performance-grid">
+                    <div class="performance-item">
+                        <h3><i class="fas fa-chart-line"></i> Complete Architecture Comparison Study</h3>
+                        <p style="text-align: justify;">I conducted a systematic evaluation of 8 different neural network architectures, ranging from ultra-lightweight (10K parameters) to massive models (43M parameters). The comprehensive study revealed optimal performance characteristics and identified the sweet spot for production deployment.</p>
+                        
+                        <div class="model-comparison-table">
+                            <table style="width: 100%; border-collapse: collapse; margin-top: 1rem;">
+                                <thead>
+                                    <tr style="background-color: #f8f9fa;">
+                                        <th style="border: 1px solid #ddd; padding: 8px; text-align: left;">Model</th>
+                                        <th style="border: 1px solid #ddd; padding: 8px; text-align: left;">Parameters</th>
+                                        <th style="border: 1px solid #ddd; padding: 8px; text-align: left;">Accuracy</th>
+                                        <th style="border: 1px solid #ddd; padding: 8px; text-align: left;">Inference Time</th>
+                                        <th style="border: 1px solid #ddd; padding: 8px; text-align: left;">Throughput</th>
+                                        <th style="border: 1px solid #ddd; padding: 8px; text-align: left;">Best Use Case</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td style="border: 1px solid #ddd; padding: 8px;"><strong>Tiny</strong></td>
+                                        <td style="border: 1px solid #ddd; padding: 8px;">10,217</td>
+                                        <td style="border: 1px solid #ddd; padding: 8px;">99.47%</td>
+                                        <td style="border: 1px solid #ddd; padding: 8px;">0.49ms</td>
+                                        <td style="border: 1px solid #ddd; padding: 8px;">205K samples/sec</td>
+                                        <td style="border: 1px solid #ddd; padding: 8px;">Edge devices</td>
+                                    </tr>
+                                    <tr style="background-color: #e8f5e8;">
+                                        <td style="border: 1px solid #ddd; padding: 8px;"><strong>Small (Best)</strong></td>
+                                        <td style="border: 1px solid #ddd; padding: 8px;">27,529</td>
+                                        <td style="border: 1px solid #ddd; padding: 8px;"><strong>100%</strong></td>
+                                        <td style="border: 1px solid #ddd; padding: 8px;"><strong>0.48ms</strong></td>
+                                        <td style="border: 1px solid #ddd; padding: 8px;"><strong>207K samples/sec</strong></td>
+                                        <td style="border: 1px solid #ddd; padding: 8px;"><strong>Production</strong></td>
+                                    </tr>
+                                    <tr>
+                                        <td style="border: 1px solid #ddd; padding: 8px;"><strong>Medium</strong></td>
+                                        <td style="border: 1px solid #ddd; padding: 8px;">351,177</td>
+                                        <td style="border: 1px solid #ddd; padding: 8px;">100%</td>
+                                        <td style="border: 1px solid #ddd; padding: 8px;">0.59ms</td>
+                                        <td style="border: 1px solid #ddd; padding: 8px;">169K samples/sec</td>
+                                        <td style="border: 1px solid #ddd; padding: 8px;">Balanced performance</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="border: 1px solid #ddd; padding: 8px;"><strong>Large</strong></td>
+                                        <td style="border: 1px solid #ddd; padding: 8px;">6,626,249</td>
+                                        <td style="border: 1px solid #ddd; padding: 8px;">100%</td>
+                                        <td style="border: 1px solid #ddd; padding: 8px;">0.90ms</td>
+                                        <td style="border: 1px solid #ddd; padding: 8px;">111K samples/sec</td>
+                                        <td style="border: 1px solid #ddd; padding: 8px;">High accuracy needs</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="border: 1px solid #ddd; padding: 8px;"><strong>XLarge</strong></td>
+                                        <td style="border: 1px solid #ddd; padding: 8px;">26,443,721</td>
+                                        <td style="border: 1px solid #ddd; padding: 8px;">100%</td>
+                                        <td style="border: 1px solid #ddd; padding: 8px;">1.03ms</td>
+                                        <td style="border: 1px solid #ddd; padding: 8px;">97K samples/sec</td>
+                                        <td style="border: 1px solid #ddd; padding: 8px;">Research applications</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="border: 1px solid #ddd; padding: 8px;"><strong>Deep</strong></td>
+                                        <td style="border: 1px solid #ddd; padding: 8px;">1,740,073</td>
+                                        <td style="border: 1px solid #ddd; padding: 8px;">99.47%</td>
+                                        <td style="border: 1px solid #ddd; padding: 8px;">1.20ms</td>
+                                        <td style="border: 1px solid #ddd; padding: 8px;">83K samples/sec</td>
+                                        <td style="border: 1px solid #ddd; padding: 8px;">Complex patterns</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="border: 1px solid #ddd; padding: 8px;"><strong>Wide</strong></td>
+                                        <td style="border: 1px solid #ddd; padding: 8px;">105,538,121</td>
+                                        <td style="border: 1px solid #ddd; padding: 8px;">100%</td>
+                                        <td style="border: 1px solid #ddd; padding: 8px;">3.25ms</td>
+                                        <td style="border: 1px solid #ddd; padding: 8px;">31K samples/sec</td>
+                                        <td style="border: 1px solid #ddd; padding: 8px;">Maximum capacity</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="border: 1px solid #ddd; padding: 8px;"><strong>Massive</strong></td>
+                                        <td style="border: 1px solid #ddd; padding: 8px;">43,239,369</td>
+                                        <td style="border: 1px solid #ddd; padding: 8px;">99.47%</td>
+                                        <td style="border: 1px solid #ddd; padding: 8px;">1.56ms</td>
+                                        <td style="border: 1px solid #ddd; padding: 8px;">64K samples/sec</td>
+                                        <td style="border: 1px solid #ddd; padding: 8px;">Comparison baseline</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    
+                    <div class="performance-item">
+                        <h3><i class="fas fa-tachometer-alt"></i> Detailed Performance Metrics</h3>
+                        <ul>
+                            <li><strong>Best Individual Model:</strong> 100% accuracy (Small model)</li>
+                            <li><strong>Test Set Performance:</strong> 99.47% accuracy</li>
+                            <li><strong>Inference Speed:</strong> 0.48ms per prediction (fastest model)</li>
+                            <li><strong>Throughput:</strong> 207,563 samples per second</li>
+                            <li><strong>Real-time Capability:</strong> 25+ FPS processing</li>
+                            <li><strong>Memory Usage:</strong> <100MB RAM during inference</li>
+                            <li><strong>CPU Usage:</strong> <30% on modern processors</li>
+                            <li><strong>Training Time:</strong> ~15 minutes for complete architecture comparison</li>
+                            <li><strong>Convergence Speed:</strong> 2-36 epochs to optimal performance</li>
+                        </ul>
+                        
+                        <h4 style="margin-top: 1.5rem;"><i class="fas fa-lightbulb"></i> Critical Research Findings</h4>
+                        <ul>
+                            <li><strong>Sweet Spot Identified:</strong> Models with 25K-350K parameters offer optimal balance</li>
+                            <li><strong>Size vs Performance:</strong> The "Small" model achieved perfect accuracy with fastest inference</li>
+                            <li><strong>Diminishing Returns:</strong> Models larger than 1M parameters showed minimal accuracy improvements</li>
+                            <li><strong>Overfitting Analysis:</strong> Most models show signs of overfitting to validation set</li>
+                            <li><strong>Dataset Limitation:</strong> 2,500 samples may be insufficient for larger models (26M+ parameters)</li>
+                            <li><strong>Rapid Learning:</strong> All models learn the task very quickly, suggesting dataset simplicity</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Training Analysis Section -->
+                <div class="training-analysis" style="margin-top: 2rem;">
+                    <h3><i class="fas fa-graduation-cap"></i> Training Dynamics & Overfitting Analysis</h3>
+                    <div class="training-grid">
+                        <div class="training-item" style="background: var(--card-bg-color); padding: 1.5rem; border-radius: 8px; border: 1px solid var(--border-color);">
+                            <h4>Individual Model Training Dynamics</h4>
+                            <table style="width: 100%; font-size: 0.9rem; border-collapse: collapse;">
+                                <thead>
+                                    <tr style="background-color: #f8f9fa;">
+                                        <th style="border: 1px solid #ddd; padding: 6px; text-align: left;">Model</th>
+                                        <th style="border: 1px solid #ddd; padding: 6px; text-align: left;">Convergence</th>
+                                        <th style="border: 1px solid #ddd; padding: 6px; text-align: left;">Loss Gap</th>
+                                        <th style="border: 1px solid #ddd; padding: 6px; text-align: left;">Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td style="border: 1px solid #ddd; padding: 6px;"><strong>Moderate</strong></td>
+                                        <td style="border: 1px solid #ddd; padding: 6px;">Epoch 5</td>
+                                        <td style="border: 1px solid #ddd; padding: 6px;">0.017</td>
+                                        <td style="border: 1px solid #ddd; padding: 6px;">⚠️ Mild</td>
+                                    </tr>
+                                    <tr style="background-color: #e8f5e8;">
+                                        <td style="border: 1px solid #ddd; padding: 6px;"><strong>Deep (Best)</strong></td>
+                                        <td style="border: 1px solid #ddd; padding: 6px;">Epoch 4</td>
+                                        <td style="border: 1px solid #ddd; padding: 6px;">0.073</td>
+                                        <td style="border: 1px solid #ddd; padding: 6px;">✅ Best Generalization</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="border: 1px solid #ddd; padding: 6px;"><strong>Wide</strong></td>
+                                        <td style="border: 1px solid #ddd; padding: 6px;">Epoch 2</td>
+                                        <td style="border: 1px solid #ddd; padding: 6px;">0.013</td>
+                                        <td style="border: 1px solid #ddd; padding: 6px;">⚠️ Mild</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="border: 1px solid #ddd; padding: 6px;"><strong>Balanced</strong></td>
+                                        <td style="border: 1px solid #ddd; padding: 6px;">Epoch 36</td>
+                                        <td style="border: 1px solid #ddd; padding: 6px;">0.014</td>
+                                        <td style="border: 1px solid #ddd; padding: 6px;">⚠️ Slight</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="border: 1px solid #ddd; padding: 6px;"><strong>Compact</strong></td>
+                                        <td style="border: 1px solid #ddd; padding: 6px;">Epoch 23</td>
+                                        <td style="border: 1px solid #ddd; padding: 6px;">0.014</td>
+                                        <td style="border: 1px solid #ddd; padding: 6px;">⚠️ Slight</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        
+                        <div class="training-item" style="background: var(--card-bg-color); padding: 1.5rem; border-radius: 8px; border: 1px solid var(--border-color);">
+                            <h4>Key Training Insights</h4>
+                            <ul style="font-size: 0.9rem;">
+                                <li><strong>🚀 Rapid Convergence:</strong> All models achieved 100% validation accuracy within 2-36 epochs</li>
+                                <li><strong>📊 Overfitting Analysis:</strong> Deep model showed healthiest training with largest train/val loss gap (0.073)</li>
+                                <li><strong>⚡ Learning Rate Optimization:</strong> Cosine annealing with warm restarts provided smooth convergence</li>
+                                <li><strong>🛑 Early Stopping:</strong> Prevented excessive overfitting across all models</li>
+                                <li><strong>⚠️ Dataset Limitation:</strong> 2,500 samples may be insufficient for larger models</li>
+                                <li><strong>🎯 Model 2 Superiority:</strong> Deep model (2.7M parameters) shows best generalization</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Gesture Recognition Capabilities -->
+            <section class="gesture-capabilities">
+                <h2>Gesture Recognition Capabilities</h2>
+                <div class="gesture-grid">
+                    <div class="gesture-item">
+                        <h3><i class="fas fa-hand-paper"></i> Supported Hand Gestures</h3>
+                        <p style="text-align: justify;">The system recognizes <b>10 distinct hand gestures</b> with high accuracy, each designed for specific human-robot interaction scenarios:</p>
+                        
+                        <div class="gesture-list">
+                            <div class="gesture-row">
+                                <div class="gesture-name"><strong>1. Palm Upward</strong></div>
+                                <div class="gesture-desc">Open palm facing up - Universal "stop" or "halt" command</div>
+                            </div>
+                            <div class="gesture-row">
+                                <div class="gesture-name"><strong>2. Index Upward</strong></div>
+                                <div class="gesture-desc">Single finger pointing up - Directional control or "move up"</div>
+                            </div>
+                            <div class="gesture-row">
+                                <div class="gesture-name"><strong>3. Fist</strong></div>
+                                <div class="gesture-desc">Closed hand gesture - "grab" or "hold" command</div>
+                            </div>
+                            <div class="gesture-row">
+                                <div class="gesture-name"><strong>4. Thumb Up</strong></div>
+                                <div class="gesture-desc">Thumbs up gesture - "approve" or "continue" command</div>
+                            </div>
+                            <div class="gesture-row">
+                                <div class="gesture-name"><strong>5. Thumb Down</strong></div>
+                                <div class="gesture-desc">Thumbs down gesture - "reject" or "stop" command</div>
+                            </div>
+                            <div class="gesture-row">
+                                <div class="gesture-name"><strong>6. Two Finger Up</strong></div>
+                                <div class="gesture-desc">Peace sign or V gesture - "select" or "choose" command</div>
+                            </div>
+                            <div class="gesture-row">
+                                <div class="gesture-name"><strong>7. Grip</strong></div>
+                                <div class="gesture-desc">Grasping motion - "pick up" or "manipulate" command</div>
+                            </div>
+                            <div class="gesture-row">
+                                <div class="gesture-name"><strong>8. Closed Hand</strong></div>
+                                <div class="gesture-desc">Tightly closed fist - "secure" or "lock" command</div>
+                            </div>
+                            <div class="gesture-row">
+                                <div class="gesture-name"><strong>9. Vertical Fingers</strong></div>
+                                <div class="gesture-desc">Fingers extended vertically - "standby" or "wait" command</div>
+                            </div>
+                            <div class="gesture-row">
+                                <div class="gesture-name"><strong>10. Index Left</strong></div>
+                                <div class="gesture-desc">Index finger pointing left - "move left" or directional control</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="gesture-item">
+                        <h3><i class="fas fa-cogs"></i> Technical Implementation</h3>
+                        <ul>
+                            <li><strong>Feature Engineering:</strong> 39 discriminative features extracted from MediaPipe landmarks</li>
+                            <li><strong>Real-time Processing:</strong> Optimized for live video streams with 25+ FPS</li>
+                            <li><strong>GPU Acceleration:</strong> CUDA support for both training and inference</li>
+                            <li><strong>Memory Efficiency:</strong> <100MB RAM usage during inference</li>
+                            <li><strong>Modular Design:</strong> Easy integration with external robotic systems</li>
+                            <li><strong>Confidence Scoring:</strong> Reliable confidence metrics for each prediction</li>
+                            <li><strong>Temporal Smoothing:</strong> Consistent predictions with confidence tracking</li>
+                        </ul>
+                        
+                        <h4 style="margin-top: 1.5rem;"><i class="fas fa-chart-bar"></i> Performance Characteristics</h4>
+                        <ul>
+                            <li><strong>Accuracy per Parameter:</strong> 0.0363 (Small model - best efficiency)</li>
+                            <li><strong>Speed per Parameter:</strong> 7.5 samples/sec per parameter</li>
+                            <li><strong>Convergence Speed:</strong> 19 epochs to optimal performance</li>
+                            <li><strong>Overfitting Resistance:</strong> Minimal train/validation gap</li>
+                            <li><strong>Cross-validation:</strong> Consistent performance across folds</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+             <!-- Code Spotlight -->
+            <section class="project-publication">
+                <h2>Code & Implementation</h2>
+                <div class="publication-card">
+                    <p class="publication-title">The complete source code, including scripts for data collection, model training, and the final application, is available on GitHub.</p>
+                    <a href="https://github.com/farshad-heravi/hand_gesture_detection" target="_blank" class="btn"><i class="fab fa-github"></i> View on GitHub</a>
+                </div>
+            </section>
+
+            <!-- Technical Specifications -->
+            <section class="technical-specifications">
+                <h2>Technical Specifications & System Requirements</h2>
+                <div class="specs-grid">
+                    <div class="specs-item">
+                        <h3><i class="fas fa-server"></i> System Requirements</h3>
+                        <ul>
+                            <li><strong>Python:</strong> 3.8+ with PyTorch 2.3.0</li>
+                            <li><strong>GPU:</strong> NVIDIA GPU with CUDA support (recommended)</li>
+                            <li><strong>Memory:</strong> 8GB RAM minimum, 16GB recommended</li>
+                            <li><strong>Storage:</strong> 2GB for models and data</li>
+                            <li><strong>OS:</strong> Linux, Windows, macOS compatible</li>
+                            <li><strong>Camera:</strong> Standard webcam or USB camera</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="specs-item">
+                        <h3><i class="fas fa-tachometer-alt"></i> Performance Benchmarks</h3>
+                        <ul>
+                            <li><strong>Training Time:</strong> 15 minutes (8 models on RTX A4000)</li>
+                            <li><strong>Inference Speed:</strong> 0.48ms per prediction</li>
+                            <li><strong>Memory Usage:</strong> <100MB during inference</li>
+                            <li><strong>Throughput:</strong> 207K samples per second</li>
+                            <li><strong>Real-time FPS:</strong> 25+ FPS processing capability</li>
+                            <li><strong>Latency:</strong> <50ms end-to-end processing</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Business Impact & Applications -->
+            <section class="business-impact">
+                <h2>Business Impact & Applications</h2>
+                <div class="impact-grid">
+                    <div class="impact-item">
+                        <h3><i class="fas fa-robot"></i> Potential Use Cases</h3>
+                        <ul>
+                            <li><strong>Robotic Control:</strong> Gesture-based robot manipulation and navigation</li>
+                            <li><strong>Accessibility:</strong> Assistive technology for disabled users</li>
+                            <li><strong>Gaming:</strong> Hand gesture gaming interfaces and VR applications</li>
+                            <li><strong>Smart Home:</strong> Gesture-based home automation and control</li>
+                            <li><strong>Healthcare:</strong> Rehabilitation and therapy applications</li>
+                            <li><strong>Education:</strong> Interactive learning systems and training</li>
+                            <li><strong>Industrial:</strong> Hands-free control in manufacturing environments</li>
+                            <li><strong>Security:</strong> Contactless authentication and access control</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="impact-item">
+                        <h3><i class="fas fa-expand-arrows-alt"></i> Scalability & Deployment</h3>
+                        <ul>
+                            <li><strong>Edge Deployment:</strong> Ultra-lightweight models for mobile devices</li>
+                            <li><strong>Cloud Processing:</strong> High-accuracy models for server applications</li>
+                            <li><strong>Real-time Systems:</strong> Optimized for live video processing</li>
+                            <li><strong>Integration Ready:</strong> Modular design for easy system integration</li>
+                            <li><strong>API Design:</strong> Clean interfaces with confidence scoring</li>
+                            <li><strong>Performance Monitoring:</strong> Real-time FPS and accuracy tracking</li>
+                        </ul>
+                        
+                        <h4 style="margin-top: 1.5rem;"><i class="fas fa-code"></i> Integration Example</h4>
+                        <div style="background: #f8f9fa; padding: 1rem; border-radius: 8px; font-family: monospace; font-size: 0.9rem;">
+                            <code>
+# Robot Control Integration<br>
+from hand_gesture_detection import HandGestureDetector<br><br>
+detector = HandGestureDetector(model, config, gesture_mapping)<br>
+prediction = detector.detect_gesture(frame)<br><br>
+if prediction and prediction.confidence > 0.8:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;robot_controller.send_command(prediction.gesture_name)
+                            </code>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Media Gallery -->
+            <section class="media-gallery">
+                <h2>Gallery</h2>
+                <div class="gallery-grid">
+                    <!-- Hand Gesture Training Curves -->
+                    <div class="gallery-item" onclick="openModal('media/images/project_learning_curves_deep_regularized.png',
+                            'Comprehensive Training Analysis - 8 Architectures',
+                            'Training and validation accuracy curves showing the model learning progress across 8 different neural network architectures. The analysis reveals optimal convergence patterns and overfitting characteristics, with the best model achieving 100% accuracy on validation set.',
+                            ['media/images/project_learning_curves_balanced_regularized.png', 'media/images/project_learning_curves_compact_regularized.png', 'media/images/project_learning_curves_moderate_regularized.png', 'media/images/project_learning_curves_wide_regularized.png'],
+                            ['Model 4 (Balanced) - Perfect accuracy with stable convergence over 36 epochs', 'Model 5 (Compact) - Efficient learning with minimal overfitting in 23 epochs', 'Model 1 (Moderate) - Balanced performance with slight overfitting in 5 epochs', 'Model 3 (Wide) - Rapid convergence but potential overfitting in just 2 epochs'])">
+                        <img src="media/images/project_learning_curves_deep_regularized.png" 
+                            alt="8-Architecture Training Analysis showing model comparison">
+                        
+                        <div class="image-description">
+                            <h4 style="text-align: center;">8-Architecture Training Analysis</h4>
+                        </div>
+                    </div>
+
+                    <!-- Confusion Matrix -->
+                    <div class="gallery-item" onclick="openModal('media/images/project_hand_confusion_matrix_deep_regularized.png',
+                            'Model 2\'s Confusion Matrix Analysis',
+                            'Confusion matrix for the best generalizing model (Deep Regularized, 2.7M parameters) showing 99.47% test accuracy. The matrix reveals near-perfect classification across all 10 gesture classes with minimal misclassifications, indicating robust feature learning and excellent generalization capabilities.',
+                            [],
+                            [])">
+                        <img src="media/images/project_hand_confusion_matrix_deep_regularized.png" 
+                        alt="Confusion matrix showing model performance">
+                        
+                        <div class="image-description">
+                            <h4 style="text-align: center;">Confusion Matrix (99.47% Accuracy)</h4>
+                        </div>
+                    </div>
+
+                    <!-- MLOps Pipeline -->
+                    <div class="gallery-item" onclick="openModal('https://placehold.co/600x400/0d2c4e/ffffff?text=MLOps+Pipeline',
+                            'Complete MLOps Pipeline',
+                            'End-to-end machine learning operations pipeline featuring interactive data collection GUI, automated data validation, 8-architecture model comparison, Weights & Biases experiment tracking, and production deployment with real-time performance monitoring.',
+                            [],
+                            [])">
+                        <img src="https://placehold.co/600x400/0d2c4e/ffffff?text=MLOps+Pipeline" 
+                        alt="Complete MLOps pipeline diagram">
+                        
+                        <div class="image-description">
+                            <h4 style="text-align: center;">Complete MLOps Pipeline</h4>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Image Modal Overlay -->
+            <div id="imageModal" class="modal-overlay" onclick="closeModal()">
+                <div class="modal-content" onclick="event.stopPropagation()">
+                    <span class="close-btn" onclick="closeModal()">&times;</span>
+                    
+                    <!-- Media Container -->
+                    <div class="modal-media-container">
+                        <img id="modalImage" src="" alt="Modal Image" style="display: none;">
+                        <video id="modalVideo" controls style="display: none;">
+                            <source src="" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        
+                        <!-- Navigation Arrows -->
+                        <button class="modal-nav-btn modal-prev" onclick="changeImage(-1)">&lt;</button>
+                        <button class="modal-nav-btn modal-next" onclick="changeImage(1)">&gt;</button>
+                    </div>
+                    
+                    <!-- Image Counter -->
+                    <div class="image-counter">
+                        <span id="currentImageIndex">1</span> / <span id="totalImages">1</span>
+                    </div>
+                    
+                    <!-- Dots Indicator -->
+                    <div class="dots-indicator" id="dotsContainer">
+                        <span class="dot active" onclick="goToImage(0)"></span>
+                    </div>
+                    
+                    <div class="modal-description">
+                        <h3 id="modalTitle"></h3>
+                        <p id="modalText"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="main-footer">
+        <div class="container">
+             <p><a href="projects.html" style="color: white; text-decoration: underline;">Back to All Projects</a></p>
+            <div class="social-icons">
+                <a href="mailto:f.n.heravi@gmail.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a>
+                <a href="https://www.linkedin.com/in/fheravi" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/farshad-heravi" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+            </div>
+            <p>&copy; 2025 Farshad Nozad Heravi</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Modal Functionality -->
+    <script>
+        let currentImages = [];
+        let currentImageIndex = 0;
+        let currentDescriptions = [];
+        
+        function openModal(imageSrc, title, description, additionalImages = [], additionalDescriptions = []) {
+            const modal = document.getElementById('imageModal');
+            const modalImage = document.getElementById('modalImage');
+            const modalTitle = document.getElementById('modalTitle');
+            const modalText = document.getElementById('modalText');
+            
+            // Set up images array
+            currentImages = [imageSrc, ...additionalImages];
+            currentImageIndex = 0;
+            
+            // Set up descriptions array
+            currentDescriptions = [description, ...additionalDescriptions];
+            
+            // Update modal content
+            updateModalImage();
+            updateModalDescription();
+            
+            // Update counter and dots
+            updateImageCounter();
+            updateDotsIndicator();
+            
+            // Show/hide navigation based on number of images
+            const prevBtn = document.querySelector('.modal-prev');
+            const nextBtn = document.querySelector('.modal-next');
+            const navBtns = document.querySelectorAll('.modal-nav-btn');
+            
+            if (currentImages.length > 1) {
+                navBtns.forEach(btn => btn.style.display = 'block');
+            } else {
+                navBtns.forEach(btn => btn.style.display = 'none');
+            }
+            
+            modal.style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+            
+            // Add fade-in animation
+            setTimeout(() => {
+                modal.classList.add('modal-active');
+            }, 10);
+        }
+        
+        function updateModalImage() {
+            const modalImage = document.getElementById('modalImage');
+            const modalVideo = document.getElementById('modalVideo');
+            const currentSrc = currentImages[currentImageIndex];
+            
+            // Check if the current item is a video
+            const isVideo = currentSrc.match(/\.(mp4|avi|mov|wmv|flv|webm)$/i);
+            
+            if (isVideo) {
+                // Show video, hide image
+                modalImage.style.display = 'none';
+                modalVideo.style.display = 'block';
+                modalVideo.src = currentSrc;
+            } else {
+                // Show image, hide video
+                modalVideo.style.display = 'none';
+                modalImage.style.display = 'block';
+                modalImage.src = currentSrc;
+            }
+        }
+        
+        function updateModalDescription() {
+            const modalTitle = document.getElementById('modalTitle');
+            const modalText = document.getElementById('modalText');
+            
+            // Use the first description as the title for all images
+            modalTitle.textContent = modalTitle.textContent || 'Image Gallery';
+            
+            // Update description based on current image
+            if (currentDescriptions[currentImageIndex]) {
+                modalText.textContent = currentDescriptions[currentImageIndex];
+            }
+        }
+        
+        function updateImageCounter() {
+            document.getElementById('currentImageIndex').textContent = currentImageIndex + 1;
+            document.getElementById('totalImages').textContent = currentImages.length;
+        }
+        
+        function updateDotsIndicator() {
+            const dotsContainer = document.getElementById('dotsContainer');
+            dotsContainer.innerHTML = '';
+            
+            for (let i = 0; i < currentImages.length; i++) {
+                const dot = document.createElement('span');
+                dot.className = `dot ${i === currentImageIndex ? 'active' : ''}`;
+                dot.onclick = () => goToImage(i);
+                dotsContainer.appendChild(dot);
+            }
+        }
+        
+        function changeImage(direction) {
+            currentImageIndex = (currentImageIndex + direction + currentImages.length) % currentImages.length;
+            updateModalImage();
+            updateModalDescription();
+            updateImageCounter();
+            updateDotsIndicator();
+        }
+        
+        function goToImage(index) {
+            currentImageIndex = index;
+            updateModalImage();
+            updateModalDescription();
+            updateImageCounter();
+            updateDotsIndicator();
+        }
+        
+        function closeModal() {
+            const modal = document.getElementById('imageModal');
+            modal.classList.remove('modal-active');
+            
+            setTimeout(() => {
+                modal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+                currentImages = [];
+                currentImageIndex = 0;
+                currentDescriptions = [];
+            }, 300);
+        }
+        
+        // Close modal with Escape key
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                closeModal();
+            }
+        });
+        
+        // Arrow key navigation
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'ArrowLeft') {
+                if (currentImages.length > 1) changeImage(-1);
+            } else if (event.key === 'ArrowRight') {
+                if (currentImages.length > 1) changeImage(1);
+            }
+        });
+    </script>
+</body>
+</html>

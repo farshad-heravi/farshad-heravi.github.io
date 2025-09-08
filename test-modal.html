@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modal Test</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f0f0f0;
+        }
+        
+        .test-image {
+            width: 200px;
+            height: 150px;
+            background-color: #007bff;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            margin: 20px;
+            border-radius: 8px;
+        }
+        
+        /* Modal Styles */
+        #imageModal.modal {
+            display: none !important;
+            position: fixed !important;
+            z-index: 9999 !important;
+            left: 0 !important;
+            top: 0 !important;
+            width: 100vw !important;
+            height: 100vh !important;
+            background-color: rgba(0, 0, 0, 0.9) !important;
+            backdrop-filter: blur(5px) !important;
+        }
+
+        #modalImage.modal-content {
+            position: absolute !important;
+            top: 50% !important;
+            left: 50% !important;
+            transform: translate(-50%, -50%) !important;
+            max-width: 90% !important;
+            max-height: 90% !important;
+            object-fit: contain !important;
+            border-radius: 8px !important;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5) !important;
+        }
+
+        #modalCaption {
+            position: absolute !important;
+            bottom: 20px !important;
+            left: 50% !important;
+            transform: translateX(-50%) !important;
+            width: 80% !important;
+            max-width: 700px !important;
+            text-align: center !important;
+            color: #f1f1f1 !important;
+            padding: 10px 0 !important;
+            height: auto !important;
+            font-size: 1.1rem !important;
+            line-height: 1.5 !important;
+        }
+
+        .close {
+            color: #f1f1f1;
+            font-size: 35px;
+            font-weight: bold;
+            position: absolute;
+            top: 15px;
+            right: 35px;
+            cursor: pointer;
+            z-index: 10000;
+        }
+    </style>
+</head>
+<body>
+    <h1>Modal Test Page</h1>
+    
+    <div class="test-image" onclick="openImageModal('https://via.placeholder.com/600x400/007bff/ffffff?text=Test+Image', 'This is a test image to verify the modal is working properly.')">
+        Click to Test Modal
+    </div>
+    
+    <p>This is a test page to verify the modal functionality works correctly.</p>
+    
+    <!-- Modal -->
+    <div id="imageModal" class="modal">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="modalImage">
+        <div id="modalCaption"></div>
+    </div>
+
+    <script>
+        // Modal functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('Modal test script loaded');
+            
+            const modal = document.getElementById('imageModal');
+            const modalImg = document.getElementById('modalImage');
+            const modalCaption = document.getElementById('modalCaption');
+            const closeBtn = document.querySelector('.close');
+            
+            console.log('Modal elements found:', { modal, modalImg, modalCaption, closeBtn });
+
+            window.openImageModal = function(src, caption) {
+                console.log('Opening modal with:', src, caption);
+                modal.style.display = 'block';
+                modalImg.src = src;
+                modalCaption.textContent = caption;
+                
+                // Force modal to be visible and on top
+                modal.style.position = 'fixed';
+                modal.style.zIndex = '9999';
+                modal.style.top = '0';
+                modal.style.left = '0';
+                modal.style.width = '100vw';
+                modal.style.height = '100vh';
+            };
+
+            closeBtn.addEventListener('click', function() {
+                console.log('Close button clicked');
+                modal.style.display = 'none';
+            });
+
+            modal.addEventListener('click', function(e) {
+                if (e.target === modal) {
+                    console.log('Modal background clicked');
+                    modal.style.display = 'none';
+                }
+            });
+
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && modal.style.display === 'block') {
+                    console.log('Escape key pressed');
+                    modal.style.display = 'none';
+                }
+            });
+            
+            console.log('Modal event listeners attached');
+        });
+    </script>
+</body>
+</html>

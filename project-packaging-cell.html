@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dual-Arm Packaging Cell | Farshad Nozad Heravi</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+    <header class="main-header">
+        <div class="container">
+            <a href="index.html" class="logo">Farshad Nozad Heravi</a>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">About Me</a></li>
+                    <li><a href="projects.html" class="active">Projects</a></li>
+                    <li><a href="skills.html">Skills</a></li>
+                    <li><a href="resume.html">Resume</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div class="project-page-container">
+            <!-- Project Header -->
+            <section class="project-header">
+                <h1>Autonomous Dual-Arm Packaging Cell</h1>
+                <p class="subtitle">A full-stack ROS2 and Isaac Sim simulation for industrial automation.</p>
+                <div class="project-info-bar">
+                    <div><strong><i class="fas fa-calendar-alt"></i> Timeline:</strong> 2025</div>
+                    <div><strong><i class="fas fa-desktop"></i> Type:</strong> Simulation</div>
+                    <div><strong><i class="fas fa-user"></i> Role:</strong> Sole Developer (A-Z)</div>
+                </div>
+            </section>
+
+            <!-- Hero Media -->
+            <section class="project-hero-media">
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/oUca86Yk-_U" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+            </section>
+
+            <!-- Project Overview -->
+            <section class="project-overview">
+                <h2>Project Overview</h2>
+                <div class="overview-grid">
+                    <div>
+                        <h3><i class="fas fa-bullseye"></i> The Goal</h3>
+                        <p style="text-align: justify;">The aim was to develop a dual-arm robotic cell which can autonomously work at the final stage of a production line to package bottle sprayers in dedicated containers.</p>
+                        <h3><i class="fas fa-user-cog"></i> My Role</h3>
+                        <p style="text-align: justify;">I implemented the project from A to Z, including designing the robotic cell, creating the simulation environment in IsaacSim, integrating it with ROS2, and implementing motion planning for both arms using MoveIt2.</p>
+                    </div>
+                    <div>
+                        <h3><i class="fas fa-check-circle"></i> Key Outcomes</h3>
+                        <ul>
+                            <li style="text-align: justify;">Successfully simulated a complete, end-to-end packaging workflow.</li>
+                            <li style="text-align: justify;">Developed a collision-free motion plan for a complex dual-arm setup.</li>
+                            <li style="text-align: justify;">Created a robust and scalable task management system using Behaviour Trees.</li>
+                        </ul>
+                        <h3><i class="fas fa-cogs"></i> Tech Stack</h3>
+                        <div class="project-tags">
+                            <span class="tag">ROS2 Humble</span>
+                            <span class="tag">Isaac Sim</span>
+                            <span class="tag">MoveIt2</span>
+                            <span class="tag">C++</span>
+                            <span class="tag">Behaviour Trees</span>
+                            <span class="tag">Python</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Technical Deep Dive -->
+            <section class="technical-deep-dive">
+                <h2>Technical Deep Dive</h2>
+                <div class="deep-dive-grid">
+                    <div class="dive-item">
+                        <h3>Dual-Arm Motion Planning</h3>
+                        <p style="text-align: justify;">Coordinating two robotic arms in a shared workspace without collision is a significant challenge. I utilized the <b>MoveIt2</b> framework to handle the complex motion planning. For generating paths in the cluttered environment, I leveraged sampling-based planners like <b>RRTConnect</b>, which excels at finding valid paths in high-dimensional spaces. For the final, precise movements such as approaching the box or placing the sprayer, the <b>Pilz Industrial Motion Planner</b> was used to generate smooth, predictable Cartesian trajectories (LIN and PTP), ensuring the reliability required in industrial tasks.</p>
+                    </div>
+                    <div class="dive-item">
+                        <h3>Task Management with Behaviour Trees</h3>
+                        <p style="text-align: justify;">To manage the complex sequence of actions (folding the box, picking, placing, sealing), I implemented a <b>Behaviour Tree (BT)</b>. BTs are ideal for robotics as they provide a modular and reactive way to define task logic. The tree was structured with high-level sequences like "AssembleBox" and "PackItems", which were composed of smaller, reusable actions. This approach made the system robust and easy to debug, as the state of the robot's logic was always clear and could react to sensor feedback or failures in a predictable manner.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Media Gallery -->
+            <!-- <section class="media-gallery"> -->
+                <!-- <h2>Gallery</h2> -->
+                <!-- <div class="gallery-grid"> -->
+                    <!-- TODO: Replace these placeholders with actual screenshots from your simulation -->
+                    <!-- <img src="https://placehold.co/600x400/0d2c4e/ffffff?text=Robotic+Cell+Design" alt="Robotic Cell Design in Isaac Sim"> -->
+                    <!-- <img src="https://placehold.co/600x400/0d2c4e/ffffff?text=Behaviour+Tree+Diagram" alt="Diagram of the Behaviour Tree"> -->
+                    <!-- <img src="https://placehold.co/600x400/0d2c4e/ffffff?text=Close-up+of+Box+Folding" alt="Robot arm folding a cardboard box"> -->
+                    <!-- <img src="https://placehold.co/600x400/0d2c4e/ffffff?text=Sprayer+Pick-and-Place" alt="Gripper picking up a bottle sprayer"> -->
+                <!-- </div> -->
+            <!-- </section> -->
+
+             <!-- Suggestions Section -->
+            <!-- <section class="project-suggestions">
+                <h2>To Strengthen This Project Showcase</h2>
+                <div class="deep-dive-grid">
+                    <div class="dive-item">
+                        <h3><i class="fas fa-code"></i> Add Code Highlights</h3>
+                        <p>Consider adding a small section with a screenshot of a key C++ function or a snippet of your Behaviour Tree XML. Briefly explaining the code provides direct evidence of your implementation skills.</p>
+                    </div>
+                    <div class="dive-item">
+                        <h3><i class="fas fa-lightbulb"></i> Describe a Challenge</h3>
+                        <p>Recruiters love to see problem-solving skills. Add a "Challenges & Solutions" section where you describe the biggest hurdle you faced (e.g., a synchronization issue, a planning failure) and the specific steps you took to overcome it.</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main> -->
+
+    <footer class="main-footer">
+        <div class="container">
+             <p><a href="projects.html" style="color: white; text-decoration: underline;">Back to All Projects</a></p>
+            <div class="social-icons">
+                <a href="mailto:f.n.heravi@gmail.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a>
+                <a href="https://www.linkedin.com/in/fheravi" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/farshad-heravi" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+            </div>
+            <p>&copy; 2025 Farshad Nozad Heravi</p>
+        </div>
+    </footer>
+
+</body>
+</html>
