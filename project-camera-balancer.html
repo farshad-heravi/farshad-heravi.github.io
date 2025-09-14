@@ -109,7 +109,7 @@
 
                     <!-- SW & HW schematics of the Camera Balancer -->
                      <div class="gallery-item" onclick="openModal('media/images/DDB_schematics.png',
-                             'SW & HW schematics',
+                             'Control Flowchart',
                              'System architecture diagram showing the complete control loop of the camera balancer. The software section includes Visual Module, Kalman Filter, and PID Controller that process data from cameras and IMUs. The hardware section contains the sensors (cameras, IMUs) and actuators (roll and pitch DC motors). This closed-loop system enables real-time stabilization by combining visual and inertial feedback to actively compensate for rover movements.',
                              ['media/images/DDB_ros_map.png'],
                              ['ROS node architecture showing the distributed system where camera and vision nodes run on the rover\'s NUC PC, while the controller node runs on the Arduino board. The nodes communicate over serial communication, with the PC handling sensor data processing and the Arduino executing real-time control algorithms for motor actuation.'],
@@ -118,20 +118,34 @@
                         alt="The SW & HW schematics">
                         
                         <div class="image-description">
-                            <h4 style="text-align: center;">SW & HW schematics</h4>
+                            <h4 style="text-align: center;">Control and ROS Flowcharts</h4>
                         </div>
                     </div>
 
                     <div class="gallery-item" onclick="openModal('media/videos/testing_ddb_on_spot.mp4',
-                        'Camera Balancer in Action',
-                        'Real-time demonstration of the camera balancer installed on Spot robot, stabilizing the camera platform while the robot moves over obstacles. The performance of the system compared to the wheeled rover was significantly worse due to impulse accelerations caused by the robot\'s movement.',
-                        ['media/videos/testing_ddb_on_Go2.mp4', 'media/videos/testing_ddb_on_rover.mp4'],
-                        ['Testing the camera balancer on Go2 legged robot. The test was aimed to record sensor reading while the robot walk over flat surface in order to improve the performance of the controller.',
-                        'Testing the camera balancer on wheeled rover. The test was aimed to record videos from the walls of Pompeii historical site in order to perform defect detection.'],
-                        ['Testing on Go2 Robot', 'Testing on Wheeled Rover'])")>
+                        'Camera Balancer in Action - Spot',
+                        'Real-time demonstration of the camera balancer installed on Spot robot, stabilizing the camera platform while the robot moves over obstacles. The performance of the system compared to the wheeled rover was significantly worse due to impulse accelerations caused by the robot\'s movement.')")>
                         <img src="media/images/testing_ddb_thumbnail.png" alt="Camera balancer in action">
                         <div class="image-description">
-                            <h4 style="text-align: center;">Camera Balancer in Action</h4>
+                            <h4 style="text-align: center;">Camera Balancer in Action Spot</h4>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item" onclick="openModal('media/videos/testing_ddb_on_Go2.mp4',
+                        'Camera Balancer in Action - Go2',
+                        'Testing the camera balancer on Go2 legged robot. The test was aimed to record sensor reading while the robot walk over flat surface in order to improve the performance of the controller.')")>
+                        <img src="media/images/testing_ddb_thumbnail_go2.png" alt="Camera balancer in action">
+                        <div class="image-description">
+                            <h4 style="text-align: center;">Camera Balancer in Action Go2</h4>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item" onclick="openModal('media/videos/testing_ddb_on_rover.mp4',
+                        'Camera Balancer in Action - Summit rover',
+                        'Testing the camera balancer on wheeled rover. The test was aimed to record videos from the walls of Pompeii historical site in order to perform defect detection.')")>
+                        <img src="media/images/testing_ddb_thumbnail_summit.png" alt="Camera balancer in action - summit">
+                        <div class="image-description">
+                            <h4 style="text-align: center;">Camera Balancer in Action Summit</h4>
                         </div>
                     </div>
                 </div>
