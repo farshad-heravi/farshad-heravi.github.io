@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Multidoc Q&A LLM | Farshad Nozad Heravi</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+    <header class="main-header">
+        <div class="container">
+            <a href="index.html" class="logo">Farshad Nozad Heravi</a>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">About Me</a></li>
+                    <li><a href="projects.html" class="active">Projects</a></li>
+                    <li><a href="skills.html">Skills</a></li>
+                    <li><a href="resume.html">Resume</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div class="project-page-container">
+            <!-- Project Header -->
+            <section class="project-header">
+                <h1>Personal Multidoc Q&A LLM</h1>
+                <p class="subtitle">A Privacy-First Multi-Document Question-Answering System with Local LLM Integration</p>
+                <div class="project-info-bar">
+                    <div><strong><i class="fas fa-calendar-alt"></i> Timeline:</strong> 2024 - 2025</div>
+                    <div><strong><i class="fas fa-flask"></i> Type:</strong> AI / NLP / Document Processing</div>
+                    <div><strong><i class="fas fa-user"></i> Role:</strong> Full-Stack AI Developer</div>
+                </div>
+            </section>
+
+            <!-- Hero Media -->
+            <div class="video-container">
+                <iframe width="100%" height="450" style="max-width: 800px; border-radius: 8px; display: block; margin: 0 auto; border: 1px solid #ddd;"
+                    src="https://www.youtube.com/embed/8fGkAxW2D7U" 
+                    title="Personal Multidoc Q&A LLM Demo"
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen>
+                </iframe>
+            </div>
+
+            <!-- Project Overview -->
+            <section class="project-overview">
+                <h2>Project Overview</h2>
+                <div class="overview-grid">
+                    <div>
+                        <h3><i class="fas fa-bullseye"></i> The Challenge & My Objective</h3>
+                        <p style="text-align: justify;">
+                            In today's data-driven world, professionals need to quickly extract insights from multiple documents, PDFs, and web content. However, existing solutions often compromise privacy by sending sensitive documents to external APIs, and they lack the ability to analyze multiple documents simultaneously while providing source citations.
+                        </p>
+                        <p style="text-align: justify;">
+                            The objective of this project was to develop a <b>privacy-first, multi-document question-answering system</b> that runs entirely on local hardware using Ollama and local LLMs. The system needed to support multiple PDF documents and web URLs simultaneously, provide intelligent document search with TF-IDF vectorization, and deliver AI-generated answers with proper source citations - all while maintaining complete data privacy.
+                        </p>
+                    </div>
+                    <div>
+                        <h3><i class="fas fa-check-circle"></i> Key Achievements</h3>
+                        <ul>
+                            <li><b>Privacy-First Architecture</b> - All processing happens locally, no external APIs</li>
+                            <li><b>Multi-Document Support</b> - Simultaneous analysis of multiple PDFs and URLs</li>
+                            <li><b>Intelligent Search</b> - TF-IDF vectorization for relevant context retrieval</li>
+                            <li><b>Source Citations</b> - Document names and page references for all answers</li>
+                            <li><b>Dynamic Document Management</b> - Add/remove documents during sessions</li>
+                            <li><b>Local LLM Integration</b> - Ollama integration with multiple model support</li>
+                            <li><b>Streamlit Interface</b> - Intuitive web-based user interface</li>
+                        </ul>
+                        <h3><i class="fas fa-cogs"></i> Tech Stack</h3>
+                        <div class="project-tags">
+                            <span class="tag">Python</span> <span class="tag">Streamlit</span> <span class="tag">Ollama</span> <span class="tag">scikit-learn</span> <span class="tag">PyPDF2</span> <span class="tag">BeautifulSoup4</span> <span class="tag">TF-IDF</span>
+                        </div>
+                    </div>
+                </div>
+                 <!-- My Contribution Section -->
+                <div style="margin-top: 2rem;">
+                     <h3><i class="fas fa-user-cog"></i> My Contribution</h3>
+                     <p style="text-align: justify;">I developed this comprehensive document analysis system from scratch, implementing the complete pipeline from document processing to AI-powered question answering. My contributions included designing the TF-IDF-based document search system, deploying local LLMs and integrating them with the system, implementing robust error handling and fallback mechanisms, and creating an intuitive Streamlit interface with real-time document management capabilities.</p>
+                </div>
+            </section>
+            
+            <!-- Technical Deep Dive -->
+            <section class="technical-deep-dive">
+                <h2>Technical Deep Dive</h2>
+                <div class="deep-dive-grid">
+                    <div class="dive-item">
+                        <h3>Document Processing Pipeline</h3>
+                        <p style="text-align: justify;">I implemented a <b>comprehensive document processing pipeline</b> that handles multiple file types and sources. The system uses PyPDF2 for primary PDF text extraction with pdfplumber as a fallback for complex PDF structures. For web content, I integrated requests and BeautifulSoup4 for robust HTML parsing and text extraction. The pipeline includes intelligent text chunking with page tracking, ensuring that source citations remain accurate. All documents are processed and vectorized using TF-IDF with 5000 maximum features and bigram support for enhanced semantic search capabilities.</p>
+                    </div>
+                    <div class="dive-item">
+                        <h3>Local LLM Integration & Multi-Model Support</h3>
+                        <p style="text-align: justify;">I developed a <b>robust LLM integration system</b> using Ollama with multiple fallback mechanisms including CLI, Python API, and Chat API interfaces. The system automatically detects available models and provides recommendations (llama3.2:3b for best balance, phi3:mini for speed, gemma:2b for lightweight deployment). I implemented comprehensive error handling with user guidance for model installation and troubleshooting. The system supports real-time model switching and provides performance monitoring with response time tracking and optimization suggestions.</p>
+                    </div>
+                    <div class="dive-item">
+                        <h3>Intelligent Search & Context Retrieval</h3>
+                        <p style="text-align: justify;">I engineered a <b>sophisticated search system</b> using TF-IDF vectorization and cosine similarity matching to find the most relevant document sections for each query. The system retrieves the top 3 most relevant contexts and combines them intelligently for comprehensive answers. I implemented dynamic document management allowing users to add/remove documents during sessions without losing existing context. The search system includes confidence scoring and relevance ranking to ensure high-quality context retrieval for accurate AI responses.</p>
+                    </div>
+                </div>
+                
+                <!-- System Architecture Flowchart -->
+                <div class="architecture-flowchart" style="margin: 2rem 0; text-align: center;">
+                    <h3 style="margin-bottom: 1.5rem; color: var(--primary-color);"><i class="fas fa-sitemap"></i> Complete System Architecture</h3>
+                    <div style="background: var(--card-bg-color); padding: 2rem; border-radius: 12px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); border: 1px solid var(--border-color);">
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin: 1rem 0;">
+                            <div style="background: #e3f2fd; padding: 1rem; border-radius: 8px; text-align: center;">
+                                <i class="fas fa-file-pdf" style="font-size: 2rem; color: #1976d2; margin-bottom: 0.5rem;"></i>
+                                <h4>PDF Processing</h4>
+                                <p style="font-size: 0.9rem; margin: 0;">PyPDF2 + pdfplumber</p>
+                            </div>
+                            <div style="background: #e8f5e8; padding: 1rem; border-radius: 8px; text-align: center;">
+                                <i class="fas fa-globe" style="font-size: 2rem; color: #388e3c; margin-bottom: 0.5rem;"></i>
+                                <h4>Web Content</h4>
+                                <p style="font-size: 0.9rem; margin: 0;">BeautifulSoup4</p>
+                            </div>
+                            <div style="background: #fff3e0; padding: 1rem; border-radius: 8px; text-align: center;">
+                                <i class="fas fa-search" style="font-size: 2rem; color: #f57c00; margin-bottom: 0.5rem;"></i>
+                                <h4>TF-IDF Search</h4>
+                                <p style="font-size: 0.9rem; margin: 0;">scikit-learn</p>
+                            </div>
+                            <div style="background: #fce4ec; padding: 1rem; border-radius: 8px; text-align: center;">
+                                <i class="fas fa-robot" style="font-size: 2rem; color: #c2185b; margin-bottom: 0.5rem;"></i>
+                                <h4>Local LLM</h4>
+                                <p style="font-size: 0.9rem; margin: 0;">Ollama Integration</p>
+                            </div>
+                        </div>
+                        <p style="margin-top: 1rem; color: #666; font-size: 0.9rem; text-align: center;">
+                            <strong>Complete Pipeline:</strong> From document upload through text extraction, vectorization, intelligent search, to AI-powered question answering with source citations.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Performance Analysis -->
+            <section class="performance-analysis">
+                <h2>System Performance & Capabilities</h2>
+                <div class="performance-grid">
+                    <div class="performance-item">
+                        <h3><i class="fas fa-tachometer-alt"></i> Performance Metrics</h3>
+                        <ul>
+                            <li><strong>Processing Speed:</strong> Real-time document processing and indexing</li>
+                            <li><strong>Search Accuracy:</strong> TF-IDF with cosine similarity for precise context retrieval</li>
+                            <li><strong>Response Time:</strong> <2 seconds for most queries with local LLM</li>
+                            <li><strong>Memory Usage:</strong> Efficient document storage in memory during sessions</li>
+                            <li><strong>Scalability:</strong> Supports multiple documents simultaneously</li>
+                            <li><strong>Model Flexibility:</strong> Easy switching between different LLM models</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="performance-item">
+                        <h3><i class="fas fa-shield-alt"></i> Privacy & Security Features</h3>
+                        <ul>
+                            <li><strong>Local Processing:</strong> All document analysis happens on user's machine</li>
+                            <li><strong>No External APIs:</strong> No data sent to third-party services</li>
+                            <li><strong>Secure Storage:</strong> Documents only kept in memory during session</li>
+                            <li><strong>Private LLM:</strong> Questions and documents never leave the system</li>
+                            <li><strong>Session Management:</strong> Easy document removal and session clearing</li>
+                            <li><strong>Data Control:</strong> Complete user control over document processing</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Supported Features -->
+            <section class="feature-capabilities">
+                <h2>System Features & Capabilities</h2>
+                <div class="feature-grid">
+                    <div class="feature-item">
+                        <h3><i class="fas fa-file-alt"></i> Document Processing</h3>
+                        <ul>
+                            <li><strong>PDF Support:</strong> Multiple PDF documents with text extraction</li>
+                            <li><strong>Web Content:</strong> URL analysis and content extraction</li>
+                            <li><strong>Text Chunking:</strong> Intelligent segmentation with page tracking</li>
+                            <li><strong>Source Citations:</strong> Document names and page references</li>
+                            <li><strong>Dynamic Management:</strong> Add/remove documents during sessions</li>
+                            <li><strong>Format Support:</strong> Various PDF structures and web content types</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="feature-item">
+                        <h3><i class="fas fa-brain"></i> AI & Search Capabilities</h3>
+                        <ul>
+                            <li><strong>Multi-Model Support:</strong> Integration with various local LLM models</li>
+                            <li><strong>Intelligent Search:</strong> TF-IDF vectorization for semantic search</li>
+                            <li><strong>Context Retrieval:</strong> Top 3 most relevant document sections</li>
+                            <li><strong>Answer Generation:</strong> AI-powered responses with source citations</li>
+                            <li><strong>Model Recommendations:</strong> Optimal model selection for different use cases</li>
+                            <li><strong>Error Handling:</strong> Comprehensive error recovery and user guidance</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Model Recommendations -->
+            <section class="model-recommendations">
+                <h2>Recommended LLM Models</h2>
+                <div class="model-grid">
+                    <div class="model-item" style="background: #e8f5e8; padding: 1.5rem; border-radius: 8px; border: 1px solid #4caf50;">
+                        <h3><i class="fas fa-star"></i> llama3.2:3b (Recommended)</h3>
+                        <p><strong>Best Overall Performance</strong> - Optimal balance of speed and accuracy for Q&A tasks</p>
+                        <ul>
+                            <li>Excellent reasoning capabilities</li>
+                            <li>Fast inference times</li>
+                            <li>Good memory efficiency</li>
+                            <li>Ideal for production use</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="model-item" style="background: #e3f2fd; padding: 1.5rem; border-radius: 8px; border: 1px solid #2196f3;">
+                        <h3><i class="fas fa-bolt"></i> phi3:mini (Speed Optimized)</h3>
+                        <p><strong>Fastest Response Times</strong> - Best for real-time applications</p>
+                        <ul>
+                            <li>Ultra-fast inference</li>
+                            <li>Low resource requirements</li>
+                            <li>Good accuracy for simple tasks</li>
+                            <li>Perfect for edge deployment</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="model-item" style="background: #fff3e0; padding: 1.5rem; border-radius: 8px; border: 1px solid #ff9800;">
+                        <h3><i class="fas fa-feather"></i> gemma:2b (Lightweight)</h3>
+                        <p><strong>Resource Constrained</strong> - Minimal system requirements</p>
+                        <ul>
+                            <li>Very lightweight</li>
+                            <li>Low memory footprint</li>
+                            <li>Good for basic Q&A</li>
+                            <li>Ideal for older hardware</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Technical Specifications -->
+            <section class="technical-specifications">
+                <h2>Technical Specifications & Requirements</h2>
+                <div class="specs-grid">
+                    <div class="specs-item">
+                        <h3><i class="fas fa-server"></i> System Requirements</h3>
+                        <ul>
+                            <li><strong>Python:</strong> 3.10+ with required dependencies</li>
+                            <li><strong>Ollama:</strong> Local LLM inference engine</li>
+                            <li><strong>Memory:</strong> 4GB RAM minimum, 8GB recommended</li>
+                            <li><strong>Storage:</strong> 2GB for models and dependencies</li>
+                            <li><strong>OS:</strong> Linux, Windows, macOS compatible</li>
+                            <li><strong>Network:</strong> Internet for initial model downloads</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="specs-item">
+                        <h3><i class="fas fa-cogs"></i> Dependencies & Libraries</h3>
+                        <ul>
+                            <li><strong>Streamlit:</strong> Web application framework</li>
+                            <li><strong>PyPDF2:</strong> Primary PDF text extraction</li>
+                            <li><strong>pdfplumber:</strong> Enhanced PDF parsing (optional)</li>
+                            <li><strong>scikit-learn:</strong> TF-IDF vectorization and similarity search</li>
+                            <li><strong>BeautifulSoup4:</strong> HTML parsing and text extraction</li>
+                            <li><strong>requests:</strong> HTTP requests for URL content</li>
+                            <li><strong>NumPy:</strong> Numerical computations</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Installation & Usage -->
+            <section class="installation-usage">
+                <h2>Installation & Usage Guide</h2>
+                <div class="usage-grid">
+                    <div class="usage-item">
+                        <h3><i class="fas fa-download"></i> Quick Setup</h3>
+                        <div style="background: #f8f9fa; padding: 1rem; border-radius: 8px; font-family: monospace; font-size: 0.9rem;">
+                            <code>
+# Install Ollama<br>
+curl -fsSL https://ollama.com/install.sh | sh<br><br>
+# Start Ollama service<br>
+ollama serve<br><br>
+# Download recommended model<br>
+ollama pull llama3.2:3b<br><br>
+# Install dependencies<br>
+pip install -r requirements.txt<br><br>
+# Run the application<br>
+streamlit run main.py
+                            </code>
+                        </div>
+                    </div>
+                    
+                    <div class="usage-item">
+                        <h3><i class="fas fa-play"></i> Usage Workflow</h3>
+                        <ol>
+                            <li><strong>Model Selection:</strong> Choose your preferred LLM model from the sidebar</li>
+                            <li><strong>Document Upload:</strong> Upload PDF files or add web page URLs</li>
+                            <li><strong>Ask Questions:</strong> Type questions in natural language</li>
+                            <li><strong>Get Answers:</strong> Receive AI-generated answers with source citations</li>
+                            <li><strong>Manage Documents:</strong> Add/remove documents as needed</li>
+                        </ol>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Code Spotlight -->
+            <section class="project-publication">
+                <h2>Code & Implementation</h2>
+                <div class="publication-card">
+                    <p class="publication-title">The complete source code, including the Streamlit application, document processing pipeline, and LLM integration, is available on GitHub.</p>
+                    <a href="https://github.com/farshad-heravi/personal_multidoc_qa_LLM" target="_blank" class="btn"><i class="fab fa-github"></i> View on GitHub</a>
+                </div>
+            </section>
+
+            <!-- Business Impact & Applications -->
+            <section class="business-impact">
+                <h2>Business Impact & Applications</h2>
+                <div class="impact-grid">
+                    <div class="impact-item">
+                        <h3><i class="fas fa-briefcase"></i> Professional Use Cases</h3>
+                        <ul>
+                            <li><strong>Research:</strong> Analyze multiple research papers and documents</li>
+                            <li><strong>Legal:</strong> Review contracts and legal documents with citations</li>
+                            <li><strong>Academic:</strong> Study materials and course content analysis</li>
+                            <li><strong>Business:</strong> Internal document analysis and knowledge extraction</li>
+                            <li><strong>Technical:</strong> Code documentation and technical manual analysis</li>
+                            <li><strong>Personal:</strong> Personal document organization and search</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="impact-item">
+                        <h3><i class="fas fa-expand-arrows-alt"></i> Scalability & Deployment</h3>
+                        <ul>
+                            <li><strong>Local Deployment:</strong> Complete privacy with local processing</li>
+                            <li><strong>Cost Effective:</strong> No external API costs or usage limits</li>
+                            <li><strong>Customizable:</strong> Easy integration with existing workflows</li>
+                            <li><strong>Offline Capable:</strong> Works without internet after initial setup</li>
+                            <li><strong>Model Flexibility:</strong> Easy switching between different LLM models</li>
+                            <li><strong>Performance Monitoring:</strong> Real-time processing and response tracking</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="main-footer">
+        <div class="container">
+             <p><a href="projects.html" style="color: white; text-decoration: underline;">Back to All Projects</a></p>
+            <div class="social-icons">
+                <a href="mailto:f.n.heravi@gmail.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a>
+                <a href="https://www.linkedin.com/in/fheravi" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/farshad-heravi" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+            </div>
+            <p>&copy; 2025 Farshad Nozad Heravi</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Modal Functionality -->
+    <script src="modal-gallery.js"></script>
+</body>
+</html>
