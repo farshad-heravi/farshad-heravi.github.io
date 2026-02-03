@@ -388,6 +388,10 @@ p {
     gap: 2rem;
 }
 
+.one-column-deep-dive .deep-dive-grid {
+    grid-template-columns: 1fr;
+}
+
 .overview-grid h3, .deep-dive-grid h3 {
     font-size: 1.2rem;
     margin-top: 0;
@@ -415,6 +419,25 @@ p {
     color: var(--secondary-color);
     margin-right: 10px;
     font-weight: bold;
+}
+
+/* Figure and Caption Styles */
+figure {
+    margin: 1.5rem 0;
+    text-align: center;
+}
+
+figure img {
+    display: block;
+    margin: 0 auto;
+}
+
+figcaption {
+    margin-top: 0.75rem;
+    font-size: 0.9rem;
+    color: #666;
+    font-style: italic;
+    text-align: center;
 }
 
 /* Performance Analysis Styles */

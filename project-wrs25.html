@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Autonomous Robotic Cell for Multi-Stage Logistics Assembly and Packaging | Farshad Nozad Heravi</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+    <header class="main-header">
+        <div class="container">
+            <a href="index.html" class="logo">Farshad Nozad Heravi</a>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">About Me</a></li>
+                    <li><a href="projects.html" class="active">Projects</a></li>
+                    <li><a href="skills.html">Skills</a></li>
+                    <li><a href="resume.html">Resume</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div class="project-page-container">
+            <!-- Project Header -->
+            <section class="project-header">
+                <h1>Autonomous Robotic Cell for Multi-Stage Logistics Assembly and Packaging</h1>
+                <p class="subtitle">A fully Autonomous Robotic Cell for Multi-Stage Logistics Assembly and Packaging</p>
+                <div class="project-info-bar">
+                    <div><strong><i class="fas fa-calendar-alt"></i> Timeline:</strong> Oct.-Dec. 2025</div>
+                    <div><strong><i class="fas fa-desktop"></i> Type:</strong> Simulation & Experimental</div>
+                    <div><strong><i class="fas fa-user"></i> Role:</strong>Project Lead, Software Developer, Control & Motion Planning, Integration and Experimentation</div>
+                </div>
+            </section>
+
+            <!-- Hero Media -->
+            <section class="project-hero-media">
+                <div class="video-container">
+                    <!-- TODO: add the video of the autonomous robotic cell -->
+                    <!-- <iframe src="https://www.youtube.com/embed/oUca86Yk-_U" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
+                </div>
+            </section>
+
+            <!-- Project Overview -->
+            <section class="project-overview">
+                <h2>Project Overview</h2>
+                <div class="overview-grid">
+                    <div>
+                        <h3><i class="fas fa-bullseye"></i> The Goal</h3>
+                        <p style="text-align: justify;">This system was specifically developed to compete in the <strong>World Robot Summit (WRS) 2025 – Manufacturing Robot Category (MRC)</strong>, where robust automation, precision control, and adaptability under time constraints are paramount. The central challenge lies in seamlessly integrating varied tasks—from delicate assembly to high-speed pick-and-place—into a single, reliable workflow.</p>
+                        <h3><i class="fas fa-check-circle"></i> Key Outcomes</h3>
+                        <ul>
+                            <li style="text-align: justify;">Successfully integrated a complete, end-to-end packaging robotic cell.</li>
+                            <li style="text-align: justify;">Developed a collision-free motion plan for a complex single-arm setup using MoveIt2 and Pilz Industrial Motion Planner.</li>
+                            <li style="text-align: justify;">Created a robust and scalable task management system using Behaviour Trees to manage the complex sequence of actions (folding the box, picking, placing, sealing).</li>
+                            <li style="text-align: justify;">Integrated the Behaviour Tree with the ROS 2 Action Server to manage the complex sequence of actions (folding the box, picking, placing, sealing).</li>
+                        </ul>
+                        <h3><i class="fas fa-cogs"></i> Tech Stack</h3>
+                        <div class="project-tags">
+                            <span class="tag">ROS2 Humble</span>
+                            <span class="tag">MoveIt2</span>
+                            <span class="tag">Behavior Trees</span>
+                            <span class="tag">YOLO</span>
+                            <span class="tag">Universal Robots</span>
+                            <span class="tag">Pilz Industrial Motion Planner</span>
+                            <span class="tag">OMPL</span>
+                            <span class="tag">Robotiq parallel gripper</span>
+                            <span class="tag">Hand-Eye Calibration</span>
+                            <span class="tag">C++</span>
+                            <span class="tag">Python</span>
+                        </div>
+                    </div>
+                    <div>
+                        <h3><i class="fas fa-user-cog"></i> My Role</h3>
+                        <p style="text-align: justify;">As the <strong>Project Lead</strong> and primary engineer, my involvement spanned the entire lifecycle of the robotic cell, from initial design and core software development to final system integration and performance validation.</p>
+                        <ul>
+                            <li style="text-align: justify;"><Strong>Project Lead</Strong>: Defined scope, architecture, and requirements for WRS 2025 MRC compliance; managed timeline and resources; and conducted risk analysis for complex integration.</li>
+                            <li style="text-align: justify;"><Strong>Software Developer</Strong>: Developed core functionality using ROS 2 Humble, authoring custom nodes for peripheral control. Integrated the perception pipeline by developing a ROS 2 Action Server for vision requests, which encapsulates the developed YOLO object detection and pose estimation models within our team. Created custom Behavior Tree (BT.CPP V4) nodes to interface with ROS 2 Actions and Services for task-specific control.</li>
+                            <li style="text-align: justify;"><Strong>Control & Motion Planning</Strong>: Configured and fine-tuned <b>MoveIt 2</b> for the Universal Robots platform, defining collision objects and planning groups. * Implemented a <b>multi-planner strategy</b> utilizing <b>OMPL</b> for long-distance, general motions, and <b>Pilz industrial motion planners (LIN, PTP, CIRC)</b> for precision tasks like linear pick-and-place and semi-circular box assembly movements. * Developed <b>Behavior Tree (BT)</b> nodes capable of <b>dynamically adapting the planning scene</b> (e.g., adding/removing collision objects for gripped items like bottles or assembled boxes) based on the robot's current status. * Integrated <b>cached trajectory approaches</b> to ensure faster, more reliable, and repeatable execution of frequently used paths during high-reliability operations.</li>
+                            <li style="text-align: justify;"><strong>Integration and Experimentation</strong>: Executed the complete system integration, successfully interfacing the Motion Planning, Vision, and Behavior Tree components within the ROS 2 framework. * Performed detailed camera calibration (Hand-Eye) to achieve high positional accuracy necessary for assembly tasks. * Designed and conducted comprehensive experimental trials, gathering performance metrics (cycle time, accuracy, success rate) and performing iterative system tuning and optimization to maximize reliability under competition constraints.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Technical Deep Dive -->
+            <section class="technical-deep-dive one-column-deep-dive">
+                <h2>System Design</h2>
+                <div class="deep-dive-grid">
+                    <div class="dive-item" >
+                        <figure>
+                            <img src="media/images/projects_wrs25_workflow.jpg" alt="Workflow" style="display: block; margin: 0 auto; width: 60%; height: auto;">
+                        </figure>
+                        <h3>Challenge Goal</h3>
+                        <p style="text-align: justify;">
+                            The challenge consisted of assembling flat cardboard boxes, filling them with bottles, sealing the box, and finally placing the box on a conveyor belt. The robotic cell is designed to be able to handle the entire workflow autonomously.
+                        </p>
+                        <h3>Hardware Overview</h3>
+                        <p style="text-align: justify;">
+                            In order to varios boxes and products, a dual-gripper end-effector consisting of a parallel-finger and a suction cup gripper is used. For closing the boxes, a custom-designed tool is utilized.
+                            The system consists of the following components:
+                            <ul>
+                                <li>A Universal Robots UR5e robotic arm</li>
+                                <li>A Robotiq 2F140 gripper</li>
+                                <li>A gripper consists of three suction cups</li>
+                                <li>A Realsense D435 camera</li>
+                                <li>A conveyor belt</li>
+                            </ul>
+                        </p>
+                        <div style="display: flex; justify-content: space-around; gap: 1rem; flex-wrap: wrap;">
+                            <figure>
+                                <img src="media/images/projects_wrs25_whole_system_schematics_rviz.png" alt="Whole System Schematics in RViz" style="width: auto; height: 450px" />
+                                <figcaption>System visualization in RViz showing the robotic cell and planning scene.</figcaption>
+                            </figure>
+                            <figure>
+                                <img src="media/images/projects_wrs25_whole_system_schematics_real.jpg" alt="Real System" style="width: auto; height: 450px" />
+                                <figcaption>Preliminary setup of the robotic cell.</figcaption>
+                            </figure>
+                        </div>            
+                    </div>
+                </div>
+                <h2>Software Design</h2>
+                <div class="deep-dive-grid">
+                    <div class="dive-item">
+                        <h3>Software Architecture</h3>
+                        <p style="text-align: justify;">The software architecture is designed to be modular and scalable. <strong>ROS2 Humble</strong> is used for the communication between the different components. <strong>MoveIt2</strong> is used for the motion planning. <strong>Behaviour Trees</strong> are used for the task management. <strong>YOLO</strong> is used for the object detection.</p>
+                    </div>
+                    <figure>
+                        <img src="media/images/projects_wrs25_ros2_architecture.jpeg" alt="ROS2 Architecture" style="width: 100%; height: auto;">
+                        <figcaption>ROS2 Architecture showing the different components and their communication.</figcaption>
+                    </figure>
+
+                    <div class="dive-item">
+                        <h3>Task Management with Behaviour Trees</h3>
+                        <p style="text-align: justify;">To manage the complex sequence of actions (folding the box, picking, placing, sealing), I implemented a <b>Behaviour Tree (BT)</b>. BTs are ideal for robotics as they provide a modular and reactive way to define task logic. The tree was structured with high-level sequences like "AssembleBox" and "PackItems", which were composed of smaller, reusable actions. This approach made the system robust and easy to debug, as the state of the robot's logic was always clear and could react to sensor feedback or failures in a predictable manner. There is a BT node that continuously monitors the paused or emergency stop states and stops the robot and resume the tasks after the stop state is cleared.</p>
+                    </div>
+
+                    <figure>
+                        <img src="media/images/projects_wrs25_BT_overview_img1.png" alt="Overall overview of the Behaviour Tree" style="width: 100%; height: auto;">
+                        <figcaption>Overall overview of the Behaviour Tree illustrated in Groot2. Each of the subtrees include various subtree/action nodes. Some of the subtrees' structures are presented in the gallery.</figcaption>
+                    </figure>
+                </div>
+
+                <div class="deep-dive-grid">
+                    <h3>Motion Planning</h3>
+                    <p style="text-align: justify;">The motion planning is done using <strong>MoveIt2</strong>. There are two moveit groups namely 'ur5_arm' and 'hand' (robotiq gripper).
+                    <br/>The ur5_arm group is used for the general motions and the hand group is used to control the robotiq gripper.</p>
+
+                    <p style="text-align: justify;">Based on the requirements in each of the tasks, appropriate motion planner is used (with the possibility to choose the proper one using the corresponding BT node): </p>
+                    <ul>
+                        <li>for long-distance, general motions, OMPL and PILZ (PTP) planners are used</li>
+                        <li>for linear motions required for picking and placing, PILZ (LIN) planner is used</li>
+                        <li>for semi-circular box assembly movements, PILZ (CIRC) planner is used</li>
+                    </ul>
+                    The following figures show the motion planning results for the different tasks.
+
+                </div>
+
+                
+            </section>
+
+            <!-- Media Gallery -->
+            <section class="media-gallery">
+                <h2>Gallery</h2>
+                <div class="gallery-grid">
+                    <!-- Hand Gesture Training Curves -->
+                    <div class="gallery-item" onclick="openModal('media/images/projects_wrs25_pickABottle_subtree.png',
+                            'Pick a Bottle Subtree',
+                            'The Pick a Bottle subtree is responsible for picking a bottle from the conveyor belt and placing it on the table.',
+                            ['media/images/projects_wrs25_gotopose_subtree.png'],
+                            ['GoToPose Subtree: ensures the success of motion planning using FALLBACKs to guarantee a valid trajectory.'],
+                            ['GoToPose Subtree'])">
+                        <img src="media/images/projects_wrs25_pickABottle_subtree.png" 
+                            alt="Pick a Bottle Subtree">
+                        
+                        <div class="image-description">
+                            <h4 style="text-align: center;">SubTrees' Structures</h4>
+                        </div>
+                    </div>
+                    
+                </div>
+            </section>
+
+             <!-- Suggestions Section -->
+            <!-- <section class="project-suggestions">
+                <h2>To Strengthen This Project Showcase</h2>
+                <div class="deep-dive-grid">
+                    <div class="dive-item">
+                        <h3><i class="fas fa-code"></i> Add Code Highlights</h3>
+                        <p>Consider adding a small section with a screenshot of a key C++ function or a snippet of your Behaviour Tree XML. Briefly explaining the code provides direct evidence of your implementation skills.</p>
+                    </div>
+                    <div class="dive-item">
+                        <h3><i class="fas fa-lightbulb"></i> Describe a Challenge</h3>
+                        <p>Recruiters love to see problem-solving skills. Add a "Challenges & Solutions" section where you describe the biggest hurdle you faced (e.g., a synchronization issue, a planning failure) and the specific steps you took to overcome it.</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main> -->
+
+    <footer class="main-footer">
+        <div class="container">
+             <p><a href="projects.html" style="color: white; text-decoration: underline;">Back to All Projects</a></p>
+            <div class="social-icons">
+                <a href="mailto:f.n.heravi@gmail.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a>
+                <a href="https://www.linkedin.com/in/fheravi" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/farshad-heravi" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+            </div>
+            <p>&copy; 2025 Farshad Nozad Heravi</p>
+        </div>
+    </footer>
+
+    <!-- Image Modal Overlay -->
+    <div id="imageModal" class="modal-overlay" onclick="closeModal()">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <span class="close-btn" onclick="closeModal()">&times;</span>
+            
+            <!-- Media Container -->
+            <div class="modal-media-container">
+                <img id="modalImage" src="" alt="Modal Image" style="display: none;">
+                <video id="modalVideo" controls style="display: none;">
+                    <source src="" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                
+                <!-- Navigation Arrows -->
+                <button class="modal-nav-btn modal-prev" onclick="changeImage(-1)">&lt;</button>
+                <button class="modal-nav-btn modal-next" onclick="changeImage(1)">&gt;</button>
+            </div>
+            
+            <!-- Image Counter -->
+            <div class="image-counter">
+                <span id="currentImageIndex">1</span> / <span id="totalImages">1</span>
+            </div>
+            
+            <!-- Dots Indicator -->
+            <div class="dots-indicator" id="dotsContainer">
+                <span class="dot active" onclick="goToImage(0)"></span>
+            </div>
+            
+            <div class="modal-description">
+                <h3 id="modalTitle"></h3>
+                <p id="modalText"></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript for Modal Functionality -->
+    <script src="modal-gallery.js"></script>
+
+</body>
+</html>
