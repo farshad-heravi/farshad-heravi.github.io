@@ -111,14 +111,23 @@
             <section class="media-gallery">
                 <h2>Gallery</h2>
                 <div class="gallery-grid">
-                    <!-- Gallery Item Placeholder -->
                     <div class="gallery-item" onclick="openModal('media/videos/project_navigation_failure_1.mp4',
                             'LiDAR-Only SLAM Failure in Symmetric Corridor Environments',
                             'This experiment demonstrates a LiDAR-only SLAM failure in long, parallel corridors caused by perceptual aliasing. Nearly identical geometric structures generate similar scan patterns, resulting in false loop closures and global map distortion. The absence of distinctive features weakens pose constraints along the corridor axis and increases accumulated drift. The failure can be clearly observed at 46 seconds, emphasizing the need for sensor fusion and more robust loop validation in highly symmetric environments.')">
                         <img src="media/images/project_navigation_failures_thumbnail.png" alt="Failures">
                         
                         <div class="image-description">
-                            <h4 style="text-align: center;">Failed Mappings</h4>
+                            <h4 style="text-align: center;">Failed Mappings in Long corridors</h4>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item" onclick="openModal('media/videos/project_navigation_failure_2.mp4',
+                            'LiDAR-Only SLAM Failure in Open Areas',
+                            'This experiment demonstrates the challenges of LiDAR-only SLAM in wide, open spaces. In large open areas with sparse structural features, the robot lacks sufficient geometric constraints, leading to poor scan matching and increased pose uncertainty. Without distinctive landmarks or nearby surfaces, small localization errors accumulate rapidly and can result in map distortion or instability. This scenario highlights the limitations of pure LiDAR-based localization in feature-scarce environments and the importance of sensor fusion or artificial landmarks to improve robustness.')">
+                        <img src="media/images/project_navigation_failures_thumbnail_2.png" alt="Failures">
+                        
+                        <div class="image-description">
+                            <h4 style="text-align: center;">Failed Mappings in Open areas</h4>
                         </div>
                     </div>
 
