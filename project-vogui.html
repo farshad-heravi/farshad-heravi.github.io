@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Autonomous Exploration and Mapping with a Mobile Manipulator | Farshad Nozad Heravi</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+    <header class="main-header">
+        <div class="container">
+            <a href="index.html" class="logo">Farshad Nozad Heravi</a>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">About Me</a></li>
+                    <li><a href="projects.html" class="active">Projects</a></li>
+                    <li><a href="skills.html">Skills</a></li>
+                    <li><a href="resume.html">Resume</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div class="project-page-container">
+            <!-- Project Header -->
+            <section class="project-header">
+                <h1>Autonomous Exploration and Mapping with a Mobile Manipulator</h1>
+                <p class="subtitle">Simulating a Mobile Manipulator (Robotnik Vogui+ & UR5e) for Autonomous Exploration and Mapping</p>
+                <div class="project-info-bar">
+                    <div><strong><i class="fas fa-calendar-alt"></i> Timeline:</strong> Early 2026</div>
+                    <div><strong><i class="fas fa-desktop"></i> Type:</strong> Simulation</div>
+                    <div><strong><i class="fas fa-user"></i> Role:</strong> Robotics Software Developer</div>
+                </div>
+            </section>
+
+            <!-- Hero Media -->
+            <section class="project-hero-media">
+                <div class="video-container">
+                    <!-- TODO: add the time-accelerated video of the mobile robot autonomously exploring a map in simulation -->
+                    <video style="width: 100%; height: auto; max-height: 500px; border: 2px solid #ccc; background-color: #000;" controls autoplay muted loop>
+                        <source src="media/videos/autonomous_slam.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+            </section>
+
+            <!-- Project Overview -->
+            <section class="project-overview">
+                <h2>Project Overview</h2>
+                <div class="overview-grid">
+                    <div>
+                        <h3><i class="fas fa-bullseye"></i> The Goal</h3>
+                        <p style="text-align: justify;">The goal of this project was to simulate a mobile manipulator consisting of a <strong>Robotnik Vogui+</strong> rover equipped with a <strong>UR5e</strong> robotic arm. The system is designed to autonomously explore an unknown environment and map it using SLAM techniques. The simulation environment, running on ROS 2 Jazzy and Gazebo Harmonic, provides a realistic platform for developing and testing autonomous navigation and manipulation capabilities.</p>
+                        <h3><i class="fas fa-check-circle"></i> Key Outcomes</h3>
+                        <ul>
+                            <li style="text-align: justify;">Successfully integrated a complete simulation of a mobile manipulator using ROS 2 Jazzy and Gazebo Harmonic.</li>
+                            <li style="text-align: justify;">Implemented the Navigation2 (Nav2) stack for the rover operating in <strong>ackermann mode</strong>.</li>
+                            <li style="text-align: justify;">Integrated <code>slam_toolbox</code> for online, asynchronous 2D mapping of the unknown environment.</li>
+                            <li style="text-align: justify;">Configured <code>explore_lite</code> for frontier-based autonomous exploration to ensure full map coverage.</li>
+                            <li style="text-align: justify;">Configured MoveIt 2 for the UR5e robotic arm for future manipulation tasks.</li>
+                            <li style="text-align: justify;">Containerized the entire multi-node simulation (Gazebo, Map, Nav, Explore, MoveIt) using Docker Compose for reproducibility and scalable deployment.</li>
+                        </ul>
+                        <h3><i class="fas fa-cogs"></i> Tech Stack</h3>
+                        <div class="project-tags">
+                            <span class="tag">ROS2 Jazzy</span>
+                            <span class="tag">Gazebo Harmonic</span>
+                            <span class="tag">Nav2</span>
+                            <span class="tag">SLAM</span>
+                            <!-- <span class="tag">explore_lite</span> -->
+                            <span class="tag">MoveIt2</span>
+                            <span class="tag">Docker</span>
+                            <span class="tag">C++</span>
+                            <span class="tag">Python</span>
+                        </div>
+                    </div>
+                    <div>
+                        <h3><i class="fas fa-user-cog"></i> My Role</h3>
+                        <p style="text-align: justify;">As the <strong>Robotics Software Developer</strong>, my responsibilities included designing the simulation architecture, integrating various ROS 2 packages, and ensuring the reliability of the autonomous systems.</p>
+                        <ul>
+                            <li style="text-align: justify;"><strong>Simulation Setup</strong>: Developed and launched the Gazebo simulation environment including the specific mobile manipulator configurations and custom world environments.</li>
+                            <li style="text-align: justify;"><strong>Navigation and Mapping</strong>: Finely tuned the Nav2 stack for ackermann kinematics and configured SLAM toolbox parameters to achieve high-quality maps. Implemented robust frontier exploration to autonomously drive the robot to unmapped areas.</li>
+                            <li style="text-align: justify;"><strong>Manipulation</strong>: Setup MoveIt 2 for the UR5e arm, validating its configuration alongside the moving base.</li>
+                            <li style="text-align: justify;"><strong>Deployment</strong>: Built a comprehensive Dockerized environment to manage dependencies easily, utilizing <code>docker-compose</code> to coordinate multiple containers (simulation world, robot spawner, SLAM, navigation, exploration, and MoveIt).</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Technical Deep Dive -->
+            <section class="technical-deep-dive one-column-deep-dive">
+                <h2>System Architecture & Navigation</h2>
+                <div class="deep-dive-grid">
+                    <div class="dive-item" >
+                        <h3>Autonomous Exploration Workflow</h3>
+                        <p style="text-align: justify;">
+                            The autonomous exploration relies heavily on a synergistic approach between `slam_toolbox`, `explore_lite`, and `Nav2`. The SLAM node continuously updates the environment map and robot pose, while `explore_lite` identifies frontiers—boundaries between known and unknown spaces. Nav2 then generates path plans for the rover in ackermann mode to reach these frontiers avoiding newly mapped obstacles dynamically.
+                        </p>
+                        <div style="display: flex; justify-content: space-around; gap: 1rem; flex-wrap: wrap; margin-top: 2rem;">
+                            <!-- <div style="width: 100%; height: 350px; display: flex; align-items: center; justify-content: center; background-color: #f0f0f0; border: 2px dashed #ccc; color: #555; text-align: center; font-size: 1.2rem;"> -->
+                                <img src="media/images/projects_navigation_workflow.jpeg" alt="ROS2 Jazzy based Autonomous Mobile Manipulator Simulation System Architecture" style="width: 100%;">
+                            <!-- </div> -->
+                        </div>            
+                    </div>
+                </div>
+            </section>
+
+            <!-- Media Gallery -->
+            <section class="media-gallery">
+                <h2>Gallery</h2>
+                <div class="gallery-grid">
+                    <!-- Gallery Item Placeholder -->
+                    <div class="gallery-item" onclick="openModal('media/videos/project_navigation_failure_1.mp4',
+                            'LiDAR-Only SLAM Failure in Symmetric Corridor Environments',
+                            'This experiment demonstrates a LiDAR-only SLAM failure in long, parallel corridors caused by perceptual aliasing. Nearly identical geometric structures generate similar scan patterns, resulting in false loop closures and global map distortion. The absence of distinctive features weakens pose constraints along the corridor axis and increases accumulated drift. The failure can be clearly observed at 46 seconds, emphasizing the need for sensor fusion and more robust loop validation in highly symmetric environments.')">
+                        <img src="media/images/project_navigation_failures_thumbnail.png" alt="Failures">
+                        
+                        <div class="image-description">
+                            <h4 style="text-align: center;">Failed Mappings</h4>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item" onclick="openModal('media/videos/project_navigation_manipulation.mp4',
+                            'MoveIt 2 Trajectory Planning',
+                            'UR5e arm trajectory planning in RViz with collision avoidance while mounted on the Vogui+ rover.')">
+                        <img src="media/images/project_navigation_manipulation_thumbnail.jpg" alt="Manipulator Motion Planning using MoveIt 2">
+                        
+                        <div class="image-description">
+                            <h4 style="text-align: center;">Manipulator Motion Planning using MoveIt 2</h4>
+                        </div>
+                    </div>
+                    
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <footer class="main-footer">
+        <div class="container">
+             <p><a href="projects.html" style="color: white; text-decoration: underline;">Back to All Projects</a></p>
+            <div class="social-icons">
+                <a href="mailto:f.n.heravi@gmail.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a>
+                <a href="https://www.linkedin.com/in/fheravi" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/farshad-heravi" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+            </div>
+            <p>&copy; 2026 Farshad Nozad Heravi</p>
+        </div>
+    </footer>
+
+    <!-- Image Modal Overlay -->
+    <div id="imageModal" class="modal-overlay" onclick="closeModal()">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <span class="close-btn" onclick="closeModal()">&times;</span>
+            
+            <!-- Media Container -->
+            <div class="modal-media-container">
+                <img id="modalImage" src="" alt="Modal Image" style="display: none;">
+                <video id="modalVideo" controls style="display: none;">
+                    <source src="" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                
+                <!-- Navigation Arrows -->
+                <button class="modal-nav-btn modal-prev" onclick="changeImage(-1)">&lt;</button>
+                <button class="modal-nav-btn modal-next" onclick="changeImage(1)">&gt;</button>
+            </div>
+            
+            <!-- Image Counter -->
+            <div class="image-counter">
+                <span id="currentImageIndex">1</span> / <span id="totalImages">1</span>
+            </div>
+            
+            <!-- Dots Indicator -->
+            <div class="dots-indicator" id="dotsContainer">
+                <span class="dot active" onclick="goToImage(0)"></span>
+            </div>
+            
+            <div class="modal-description">
+                <h3 id="modalTitle"></h3>
+                <p id="modalText"></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript for Modal Functionality -->
+    <script src="modal-gallery.js"></script>
+
+<!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "00fa08e30eb342f49f66ea0161dc7675"}'></script><!-- End Cloudflare Web Analytics -->
+</body>
+</html>
