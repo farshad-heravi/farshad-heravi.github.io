@@ -28,7 +28,7 @@
             <!-- Project Header -->
             <section class="project-header">
                 <h1>Autonomous Robotic Cell for Multi-Stage Logistics Assembly and Packaging</h1>
-                <p class="subtitle">A fully Autonomous Robotic Cell for Multi-Stage Logistics Assembly and Packaging</p>
+                <p class="subtitle">Developed and validated at the <strong>World Robot Summit 2025</strong> Manufacturing Challenge (Aichi, Japan). Supported by EU Horizon projects RENÉE & MASTERLY.</p>
                 <div class="project-info-bar">
                     <div><strong><i class="fas fa-calendar-alt"></i> Timeline:</strong> Oct.-Dec. 2025</div>
                     <div><strong><i class="fas fa-desktop"></i> Type:</strong> Simulation & Experimental</div>
@@ -40,7 +40,8 @@
             </section>
 
             <!-- Hero Media -->
-            <div class="video-container">
+            <div class="video-con
+            tainer">
                 <iframe width="100%" height="450" style="max-width: 800px; border-radius: 8px; display: block; margin: 0 auto; border: 1px solid #ddd;"
                     src="https://www.youtube.com/embed/6g4h9ilDDHo" 
                     title="WRS 2025 MRC Demo"
@@ -56,25 +57,28 @@
                 <div class="overview-grid">
                     <div>
                         <h3><i class="fas fa-bullseye"></i> The Goal</h3>
-                        <p style="text-align: justify;">This system was specifically developed to compete in the <strong>World Robot Summit (WRS) 2025 – Manufacturing Robot Category (MRC)</strong>, where robust automation, precision control, and adaptability under time constraints are paramount. The central challenge lies in seamlessly integrating varied tasks—from delicate assembly to high-speed pick-and-place—into a single, reliable workflow.</p>
+                        <p style="text-align: justify;">This system was developed to compete in the <strong>World Robot Summit (WRS) 2025 – Manufacturing Robot Category (MRC)</strong> in Aichi, Japan — a challenge organised by Japan's Ministry of Economy, Trade and Industry (METI) that evaluates robotic packaging systems against task completion rate, cycle time, and total hardware cost. The work was carried out within the <strong>EU Horizon Europe projects RENÉE</strong> (GA No. 101138415) and <strong>MASTERLY</strong> (GA No. 101091800), both targeting modular, adaptable robotic systems. The central challenge was integrating delicate assembly, vision-guided picking, and high-reliability sealing into a single autonomous pipeline under live competition time pressure.</p>
                         <h3><i class="fas fa-check-circle"></i> Key Outcomes</h3>
                         <ul>
-                            <li style="text-align: justify;">Successfully integrated a complete, end-to-end packaging robotic cell.</li>
-                            <li style="text-align: justify;">Developed a collision-free motion plan for a complex single-arm setup using MoveIt2 and Pilz Industrial Motion Planner.</li>
-                            <li style="text-align: justify;">Created a robust and scalable task management system using Behaviour Trees to manage the complex sequence of actions (folding the box, picking, placing, sealing).</li>
-                            <li style="text-align: justify;">Integrated the Behaviour Tree with the ROS 2 Action Server to manage the complex sequence of actions (folding the box, picking, placing, sealing).</li>
+                            <li style="text-align: justify;"><strong>100% pick success rate</strong> achieved in Run 2 at WRS 2025 (improved from 66.67% in Run 1 after between-run grasp-parameter adjustment).</li>
+                            <li style="text-align: justify;"><strong>20.67 s/bottle</strong> mean cycle time in the official competition run.</li>
+                            <li style="text-align: justify;"><strong>Total hardware cost below 500 EUR</strong> (excluding the robot arm), demonstrating low-cost feasibility.</li>
+                            <li style="text-align: justify;">Designed a custom <strong>dual-mode wrist-mounted end-effector</strong> combining vacuum suction and parallel-jaw grasping in a single 3D-printed unit — eliminating tool-change overhead.</li>
+                            <li style="text-align: justify;">Implemented a <strong>four-level planning fallback</strong> (Pilz LIN → Pilz PTP → CHOMP → OMPL RRTConnect) that autonomously recovered from planning failures without interrupting task execution.</li>
+                            <li style="text-align: justify;">Full end-to-end system validated under live competition conditions; execution trace recorded as structured ROS2 bags for post-hoc analysis.</li>
                         </ul>
                         <h3><i class="fas fa-cogs"></i> Tech Stack</h3>
                         <div class="project-tags">
                             <span class="tag">ROS2 Humble</span>
                             <span class="tag">MoveIt2</span>
-                            <span class="tag">Behavior Trees</span>
-                            <span class="tag">YOLO</span>
-                            <span class="tag">Universal Robots</span>
+                            <span class="tag">BehaviorTree.CPP v4</span>
+                            <span class="tag">YOLOv8</span>
+                            <span class="tag">Planar Homography</span>
+                            <span class="tag">Universal Robots UR5e</span>
                             <span class="tag">Pilz Industrial Motion Planner</span>
                             <span class="tag">OMPL</span>
-                            <span class="tag">Robotiq parallel gripper</span>
-                            <span class="tag">Hand-Eye Calibration</span>
+                            <span class="tag">Intel RealSense D435i</span>
+                            <span class="tag">URScript</span>
                             <span class="tag">C++</span>
                             <span class="tag">Python</span>
                         </div>
@@ -106,14 +110,14 @@
                         </p>
                         <h3>Hardware Overview</h3>
                         <p style="text-align: justify;">
-                            In order to varios boxes and products, a dual-gripper end-effector consisting of a parallel-finger and a suction cup gripper is used. For closing the boxes, a custom-designed tool is utilized.
-                            The system consists of the following components:
+                            The workcell is built around a <strong>UR5e collaborative manipulator</strong> mounted on a rigid aluminium profile frame. All task-relevant fixtures are integrated into the same frame, making the system fully self-contained. The key hardware innovation is a <strong>custom dual-mode wrist-mounted end-effector</strong>: three suction cups and two parallel-jaw fingers are arranged at 90° on a common 3D-printed PLA mounting plate, enabling autonomous switching between grasping modalities (vacuum for cardboard; jaw for bottles) without any mechanical reconfiguration. An <strong>Intel RealSense D435i camera</strong> is mounted overhead in a fixed position, decoupling perception from manipulation and providing a stable viewpoint for the vision pipeline. Additional custom fixtures on the frame include:
                             <ul>
-                                <li>A Universal Robots UR5e robotic arm</li>
-                                <li>A Robotiq 2F140 gripper</li>
-                                <li>A gripper consists of three suction cups</li>
-                                <li>A Realsense D435 camera</li>
-                                <li>A conveyor belt</li>
+                                <li>A Universal Robots UR5e robotic arm (850 mm reach, 5 kg payload)</li>
+                                <li>Custom dual-mode end-effector (3 suction cups + parallel-jaw fingers, 3D-printed)</li>
+                                <li>Intel RealSense D435i (overhead, fixed mount — used as RGB only)</li>
+                                <li>Custom two-horns closing tool for sealing cardboard flaps</li>
+                                <li>Custom sticker dispenser for label application</li>
+                                <li>Aluminium profile frame (self-contained, no external infrastructure needed)</li>
                             </ul>
                         </p>
                         <div style="display: flex; justify-content: space-around; gap: 1rem; flex-wrap: wrap;">
@@ -132,7 +136,7 @@
                 <div class="deep-dive-grid">
                     <div class="dive-item">
                         <h3>Software Architecture</h3>
-                        <p style="text-align: justify;">The software architecture is designed to be modular and scalable. <strong>ROS2 Humble</strong> is used for the communication between the different components. <strong>MoveIt2</strong> is used for the motion planning. <strong>Behaviour Trees</strong> are used for the task management. <strong>YOLO</strong> is used for the object detection.</p>
+                        <p style="text-align: justify;">The software stack is built on <strong>ROS2 Humble</strong> with four strictly separated layers: <em>Perception</em> (YOLOv8 inference + planar homography), <em>Task Management</em> (BehaviorTree.CPP v4), <em>Motion Planning</em> (MoveIt2 with Pilz + OMPL), and <em>Hardware Interfacing</em> (UR ROS2 driver + digital I/O). The Behaviour Tree is the sole orchestrator — perception, planning, and hardware interfacing communicate with it exclusively through typed ROS2 action and service interfaces. This strict separation means each layer can be independently validated and replaced without propagating structural changes. The full execution trace — BT node states, perception outputs, and joint trajectories — is recorded as a structured ROS2 bag for post-hoc analysis and regression testing.</p>
                     </div>
                     <figure>
                         <img src="media/images/projects_wrs25_ros2_architecture.jpeg" alt="ROS2 Architecture" style="width: 100%; height: auto;">
@@ -152,31 +156,105 @@
 
                 <div class="deep-dive-grid">
                     <h3>Motion Planning</h3>
-                    <p style="text-align: justify;">The motion planning is done using <strong>MoveIt2</strong>. There are two moveit groups namely 'ur5_arm' and 'hand' (robotiq gripper).
-                    <br/>The ur5_arm group is used for the general motions and the hand group is used to control the robotiq gripper.</p>
-
-                    <p style="text-align: justify;">Based on the requirements in each of the tasks, appropriate motion planner is used (with the possibility to choose the proper one using the corresponding BT node): </p>
+                    <p style="text-align: justify;">Motion planning is handled by <strong>MoveIt2</strong> with a multi-planner strategy selected per task context via BT nodes:</p>
                     <ul>
-                        <li>for long-distance, general motions, OMPL and PILZ (PTP) planners are used</li>
-                        <li>for linear motions required for picking and placing, PILZ (LIN) planner is used</li>
-                        <li>for semi-circular box assembly movements, PILZ (CIRC) planner is used</li>
+                        <li><strong>Pilz LIN</strong> — straight-line Cartesian paths for all pre-grasp approach, descent, retract, and place moves</li>
+                        <li><strong>Pilz PTP</strong> — joint-space transitions to home and pre-pick configurations</li>
+                        <li><strong>Pilz CIRC</strong> — circular arc motions for box erection (computed on-the-fly from live TCP pose and carton width)</li>
+                        <li><strong>OMPL (RRTConnect)</strong> — collision-aware paths for long-distance general motions</li>
                     </ul>
-                    The following figures show the motion planning results for the different tasks.
+                    <p style="text-align: justify;"><strong>Planning robustness</strong> is handled by a reusable <code>go_to_pose_tree</code> subtree that wraps every Cartesian goal in a four-level Fallback: <em>Pilz LIN → Pilz PTP → CHOMP → OMPL RRTConnect</em>. This cascade recovers from planning failures automatically without interrupting task execution. For paths requiring the tightest positional repeatability (sticker dispenser approach, two-horns closing tool engagement), execution is delegated directly to <strong>URScript</strong>, bypassing MoveIt2 and exploiting the UR5e controller's native path interpolation at its full control frequency. The MoveIt2 planning scene is kept geometrically consistent throughout the run: erected box models are inserted as collision objects after box erection and removed upon transfer to the delivery case.</p>
+                </div>
 
+                <div class="deep-dive-grid">
+                    <h3>Vision Pipeline — Planar Homography</h3>
+                    <p style="text-align: justify;">The perception layer subscribes to the RGB stream from the fixed overhead RealSense D435i and runs a fine-tuned <strong>YOLOv8</strong> model constrained to a predefined image window corresponding to the bottle supply region, suppressing false positives from workcell fixtures and background clutter without per-frame masking overhead. For each detection, the bounding-box centroid is mapped to the robot base frame through a <strong>pre-computed planar homography</strong> — calibrated against the known, constant table height. No depth data from the sensor is consumed at runtime; the 3D-to-2D projection is resolved entirely through this geometric constraint, making the pipeline fast and robust to depth sensor noise. Critically, scene estimation is <strong>re-executed at every BT tick</strong> (not once per pick cycle), ensuring that contact-induced bottle displacement or occlusion removal from prior picks is reflected in pose estimates before each grasp is committed.</p>
                 </div>
 
                 
             </section>
 
+            <!-- Vision Results -->
             <section class="project-suggestions">
-                <h2>Other Results</h2>
+                <h2>Vision Pipeline Results</h2>
                 <figure>
                     <img src="media/images/project_wrs25_single_arm_vision_bottle_pose.jpeg" alt="Bottle Pose Detection Results" style="width: 100%; height: auto;">
                 </figure>
                 <figure>
                     <img src="media/images/project_wrs25_single_arm_vision_bottle_pose_2.png" alt="Bottle Pose Detection 2 Results" style="width: 100%; height: auto;">
-                    <figcaption>Bottle Pose Detection Results</figcaption>
+                    <figcaption>YOLOv8 bottle detection with planar homography back-projection to robot base frame. Grasp targets are updated at every BT tick to account for contact-induced displacement between picks.</figcaption>
                 </figure>
+            </section>
+
+            <!-- Competition Results -->
+            <section class="technical-deep-dive one-column-deep-dive">
+                <h2>Competition Results — WRS 2025 (Aichi, Japan)</h2>
+                <p style="text-align: justify;">The system was evaluated during the official WRS 2025 Manufacturing Challenge. Each run required autonomously erecting a flat cardboard box, packing three bottles into designated slots, sealing, and transferring the carton — within a fixed time window.</p>
+                <div style="overflow-x: auto; margin-top: 1.5rem;">
+                    <table style="width: 100%; border-collapse: collapse; font-size: 0.95rem;">
+                        <thead>
+                            <tr style="background-color: #0d2c4e; color: white;">
+                                <th style="padding: 0.75rem 1rem; text-align: left; border: 1px solid #ddd;">Metric</th>
+                                <th style="padding: 0.75rem 1rem; text-align: center; border: 1px solid #ddd;">Run 1</th>
+                                <th style="padding: 0.75rem 1rem; text-align: center; border: 1px solid #ddd;">Run 2</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td style="padding: 0.65rem 1rem; border: 1px solid #ddd;">Bottles attempted</td>
+                                <td style="padding: 0.65rem 1rem; border: 1px solid #ddd; text-align: center;">3</td>
+                                <td style="padding: 0.65rem 1rem; border: 1px solid #ddd; text-align: center;">3</td>
+                            </tr>
+                            <tr style="background-color: #f9f9f9;">
+                                <td style="padding: 0.65rem 1rem; border: 1px solid #ddd;">Successfully packed</td>
+                                <td style="padding: 0.65rem 1rem; border: 1px solid #ddd; text-align: center;">2</td>
+                                <td style="padding: 0.65rem 1rem; border: 1px solid #ddd; text-align: center;"><strong>3</strong></td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 0.65rem 1rem; border: 1px solid #ddd;">Pick success rate</td>
+                                <td style="padding: 0.65rem 1rem; border: 1px solid #ddd; text-align: center;">66.67%</td>
+                                <td style="padding: 0.65rem 1rem; border: 1px solid #ddd; text-align: center;"><strong>100%</strong></td>
+                            </tr>
+                            <tr style="background-color: #f9f9f9;">
+                                <td style="padding: 0.65rem 1rem; border: 1px solid #ddd;">Avg. cycle time (s/bottle)</td>
+                                <td style="padding: 0.65rem 1rem; border: 1px solid #ddd; text-align: center;">21.03 s</td>
+                                <td style="padding: 0.65rem 1rem; border: 1px solid #ddd; text-align: center;"><strong>20.67 s</strong></td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 0.65rem 1rem; border: 1px solid #ddd;">Total run time</td>
+                                <td style="padding: 0.65rem 1rem; border: 1px solid #ddd; text-align: center;">198 s</td>
+                                <td style="padding: 0.65rem 1rem; border: 1px solid #ddd; text-align: center;">240 s</td>
+                            </tr>
+                            <tr style="background-color: #f9f9f9;">
+                                <td style="padding: 0.65rem 1rem; border: 1px solid #ddd;">Total hardware cost (excl. robot arm)</td>
+                                <td colspan="2" style="padding: 0.65rem 1rem; border: 1px solid #ddd; text-align: center;"><strong>&lt; 500 EUR</strong></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <p style="text-align: justify; margin-top: 1rem; font-size: 0.9rem; color: #555;">The longer total run time in Run 2 reflects a safety verification pause inserted after the between-run grasp parameter adjustment; this pause was included in the official timing.</p>
+            </section>
+
+            <!-- Challenges & Solutions -->
+            <section class="technical-deep-dive one-column-deep-dive">
+                <h2>Challenges &amp; Solutions</h2>
+                <div class="deep-dive-grid">
+                    <div class="dive-item">
+                        <h3><i class="fas fa-exclamation-triangle"></i> Challenge 1: Grasp Failure on Small-Diameter Bottles</h3>
+                        <p style="text-align: justify;">In Run 1, one of three bottles failed to be grasped — a 66.67% success rate. Root-cause analysis during the inter-run break identified that a specific combination of small bottle diameter and contact-point location caused the parallel fingers to close on the bottle body rather than securing a stable grip. With only minutes between runs, a full redesign was impossible.</p>
+                        <p style="text-align: justify;"><strong>Solution:</strong> The pre-grasp approach pose and finger-closing offset parameters were adjusted directly in the BT blackboard configuration (loaded at runtime without recompiling), correcting the approach angle and closing delay for small-diameter profiles. Run 2 achieved 100% pick success with a tighter mean cycle time of 20.67 s/bottle.</p>
+                    </div>
+                    <div class="dive-item">
+                        <h3><i class="fas fa-exclamation-triangle"></i> Challenge 2: Planning Failures in Constrained Workspaces</h3>
+                        <p style="text-align: justify;">The single-arm cell requires the robot to reach across a cluttered workspace with erected cardboard boxes, custom fixtures, and dynamic collision objects. Straight-line Pilz LIN plans occasionally failed when the workspace was most constrained (e.g., after box erection added large collision objects near the arm's path).</p>
+                        <p style="text-align: justify;"><strong>Solution:</strong> A reusable <code>go_to_pose_tree</code> BT subtree was implemented that wraps every Cartesian goal in a four-level Fallback cascade: <em>Pilz LIN → Pilz PTP → CHOMP → OMPL RRTConnect</em>. Planning failures are handled structurally by the tree, not as exceptions, so the robot autonomously retries with progressively less constrained planners without operator intervention.</p>
+                    </div>
+                    <div class="dive-item">
+                        <h3><i class="fas fa-exclamation-triangle"></i> Challenge 3: Precision for Sticker Application and Box Sealing</h3>
+                        <p style="text-align: justify;">The sticker dispenser pick and two-horns box closing required sub-centimetre repeatability — tolerances tighter than what MoveIt2's Cartesian controller reliably delivered at the required speed.</p>
+                        <p style="text-align: justify;"><strong>Solution:</strong> For these two specific motion primitives, trajectory execution was delegated directly to <strong>URScript</strong>, bypassing the MoveIt2 stack entirely and exploiting the UR5e controller's native path interpolation at its full onboard control frequency. This hybrid approach kept MoveIt2 for general planning while using the robot's native controller where repeatability was critical.</p>
+                    </div>
+                </div>
             </section>
 
             <!-- Media Gallery -->
@@ -201,21 +279,17 @@
                 </div>
             </section>
 
-             <!-- Suggestions Section -->
-            <!-- <section class="project-suggestions">
-                <h2>To Strengthen This Project Showcase</h2>
-                <div class="deep-dive-grid">
-                    <div class="dive-item">
-                        <h3><i class="fas fa-code"></i> Add Code Highlights</h3>
-                        <p>Consider adding a small section with a screenshot of a key C++ function or a snippet of your Behaviour Tree XML. Briefly explaining the code provides direct evidence of your implementation skills.</p>
-                    </div>
-                    <div class="dive-item">
-                        <h3><i class="fas fa-lightbulb"></i> Describe a Challenge</h3>
-                        <p>Recruiters love to see problem-solving skills. Add a "Challenges & Solutions" section where you describe the biggest hurdle you faced (e.g., a synchronization issue, a planning failure) and the specific steps you took to overcome it.</p>
-                    </div>
+            <!-- Publication -->
+            <section class="project-publication">
+                <h2>Related Publication</h2>
+                <div class="publication-card">
+                    <p class="publication-title">"A Low-Cost, Compact, and Modular Robotic System for Automated Bottle Packing"</p>
+                    <p class="publication-authors"><strong>Farshad Nozad Heravi*</strong>, Marcel Lahoud*, Gabriele Marchello, Lorenzo D'Acierno, Ferdinando Cannella</p>
+                    <p class="publication-venue"><em>Industrial Robotics Facility, Istituto Italiano di Tecnologia (IIT), Genova, Italy &mdash; manuscript in preparation</em></p>
                 </div>
             </section>
-        </div>-->
+
+        </div>
     </main> 
 
     <footer class="main-footer">
