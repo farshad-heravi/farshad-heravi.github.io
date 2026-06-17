@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Collision-Aware Pick-and-Place Manipulation Stack | Farshad Nozad Heravi</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+    <header class="main-header">
+        <div class="container">
+            <a href="index.html" class="logo">Farshad Nozad Heravi</a>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">About Me</a></li>
+                    <li><a href="projects.html" class="active">Projects</a></li>
+                    <li><a href="skills.html">Skills</a></li>
+                    <li><a href="resume.html">Resume</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div class="project-page-container">
+            <!-- Project Header -->
+            <section class="project-header">
+                <h1 style="font-size: 2.3em;">Collision-Aware Pick-and-Place Manipulation Stack</h1>
+                <p class="subtitle">A modular manipulation library built around a high-performance <strong>C++ engine</strong> exposed to <strong>Python</strong>.</p>
+                <div class="project-info-bar">
+                    <div><strong><i class="fas fa-calendar-alt"></i> Duration:</strong>1 week</div>
+                    <div><strong><i class="fas fa-desktop"></i> Type:</strong> Simulation &amp; Robotics Software Library</div>
+                    <div><strong><i class="fas fa-code-branch"></i> Languages:</strong> C++17, Python, CMake</div>
+                    <div><strong><i class="fas fa-user"></i> Role:</strong> Sole Author — Architecture, C++ Engine, Python API, Motion Planning &amp; Control</div>                    
+                </div>
+                <div class="project-links">
+                    <a href="https://github.com/farshad-heravi/pnp_collision_avoidance_manipulation_stack" target="_blank" class="btn btn-github"><i class="fab fa-github"></i> View on GitHub</a>
+                </div>
+            </section>
+
+            <!-- Hero Media -->
+            <div class="video-container">
+                <iframe width="100%" height="450" style="max-width: 800px; border-radius: 8px; display: block; margin: 0 auto; border: 1px solid #ddd;"
+                    src="media/videos/project_pnp_demo.mp4" 
+                    title="Collision-Aware Pick-and-Place Manipulation Stack Demo"
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen>
+                </iframe>
+            </div>
+
+            <!-- Project Overview -->
+            <section class="project-overview">
+                <h2>Project Overview</h2>
+                <div class="overview-grid">
+                    <div>
+                        <h3><i class="fas fa-bullseye"></i> The Goal</h3>
+                        <p style="text-align: justify;">Build a clean, reusable manipulation stack that takes a simulated robotic arm from a high-level pick-and-place request all the way down to collision-free, physically executed motion — without coupling the user to a single robot, gripper, or scene layout. The library is engineered so that the computationally heavy components (inverse kinematics, sampling-based planning, trajectory generation, torque control) live in a performant <strong>C++ engine</strong>, while scene composition and orchestration stay ergonomic in <strong>Python</strong>. The two layers are bridged with <strong>PyBind11</strong>, giving a single-import Python API backed by compiled C++ internals.</p>
+                        <h3><i class="fas fa-check-circle"></i> Key Highlights</h3>
+                        <ul>
+                            <li style="text-align: justify;"><strong>Two-layer architecture</strong> — a compiled C++17 engine for IK, planning, trajectories and control, wrapped by a Python orchestration and scene-composition layer through PyBind11.</li>
+                            <li style="text-align: justify;"><strong>Robot- and gripper-agnostic</strong> — runtime-selectable across <strong>UR5e</strong>, <strong>Franka Panda</strong>, and <strong>xArm7</strong> arms with <strong>Robotiq 2F-85</strong> grippers, assembled dynamically rather than baked into a fixed model.</li>
+                            <li style="text-align: justify;"><strong>Collision-aware RRT planner</strong> built directly on MuJoCo's contact queries, with grasp-aware collision filtering so a held object moves with the gripper during planning.</li>
+                            <li style="text-align: justify;"><strong>Smooth, limit-respecting execution</strong> via quintic polynomial trajectory generation feeding a per-joint PD torque controller stepped through MuJoCo's physics loop.</li>
+                            <li style="text-align: justify;"><strong>Real-time observability</strong> — full 3-D telemetry streamed live to the Rerun viewer for inspection and debugging.</li>
+                            <li style="text-align: justify;"><strong>Modern, reproducible build</strong> — CMake + scikit-build-core packaging with a single <code>pip install -e .</code> producing the compiled extension.</li>
+                        </ul>
+                        <h3><i class="fas fa-cogs"></i> Tech Stack</h3>
+                        <div class="project-tags">
+                            <span class="tag">C++17</span>
+                            <span class="tag">Python</span>
+                            <span class="tag">PyBind11</span>
+                            <span class="tag">MuJoCo ≥3.0</span>
+                            <span class="tag">dm_control (MJCF)</span>
+                            <span class="tag">Rerun SDK</span>
+                            <span class="tag">CMake</span>
+                            <span class="tag">scikit-build-core</span>
+                            <span class="tag">RRT</span>
+                            <span class="tag">Inverse Kinematics</span>
+                            <span class="tag">Trajectory Optimization</span>
+                            <span class="tag">Open3D</span>
+                        </div>
+                    </div>
+                    <div>
+                        <h3><i class="fas fa-user-cog"></i> My Role</h3>
+                        <p style="text-align: justify;">I designed and implemented the entire stack end-to-end — from the architectural decision to split a compiled engine from a scripting layer, through the numerical algorithms, down to the packaging that ships it.</p>
+                        <ul>
+                            <li style="text-align: justify;"><strong>Engine Architecture</strong>: Defined the C++/Python boundary and authored the PyBind11 bindings (<code>bindings/pypackage.cpp</code>) that expose the C++ classes as first-class Python objects.</li>
+                            <li style="text-align: justify;"><strong>Motion &amp; Control Algorithms</strong>: Implemented the Damped Least-Squares IK solver, the RRT motion planner with MuJoCo collision queries, quintic-polynomial trajectory smoothing under velocity limits, and the PD torque controller.</li>
+                            <li style="text-align: justify;"><strong>Scene System</strong>: Built the Python scene manager that composes robot + gripper + table + tray + objects dynamically via the dm_control MJCF API, including STL mesh ingestion, format conversion, decimation, and collision-proxy generation.</li>
+                            <li style="text-align: justify;"><strong>Orchestration &amp; Tooling</strong>: Wrote the high-level <code>PnpSystem</code> orchestrator, the Rerun visualization helper, the example task manager, and the CMake / scikit-build-core packaging.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Technical Deep Dive -->
+            <section class="technical-deep-dive one-column-deep-dive">
+                <h2>System Architecture</h2>
+                <div class="deep-dive-grid">
+                    <div class="dive-item">
+                        <h3>A Two-Layer Design</h3>
+                        <p style="text-align: justify;">The stack is deliberately split into two cooperating layers. The <strong>C++ engine layer</strong> (<code>src/</code>, <code>include/pnp/</code>) contains the performance-critical numerical core: <code>ik.cpp</code> (Damped Least-Squares IK), <code>planner.cpp</code> (RRT with collision detection), <code>trajectory.cpp</code> (quintic polynomial trajectory generation), and <code>controller.cpp</code> (PD torque control). The <strong>Python layer</strong> (<code>python/pnp/</code>) handles everything that benefits from flexibility and rapid iteration: <code>scene.py</code> composes the MJCF scene at runtime, <code>system.py</code> exposes the high-level <code>PnpSystem</code> orchestrator, and <code>visualizer.py</code> streams telemetry to Rerun. <strong>PyBind11</strong> bindings in <code>bindings/pypackage.cpp</code> stitch the layers together so that calling a planner from Python invokes compiled C++ with no glue code on the user's side.</p>
+                        <p style="text-align: justify;">This separation means the heavy inner loops — Jacobian assembly, nearest-neighbour search, per-step collision checks, torque integration — run at compiled speed, while scene setup and task logic stay readable and quick to modify. Either layer can be reworked independently behind the binding boundary.</p>
+                    </div>
+                    <div class="dive-item">
+                        <h3>The Pick-and-Place Pipeline</h3>
+                        <p style="text-align: justify;">A task flows through six well-defined stages: <strong>(1) Scene Construction</strong> — robot, gripper, table, tray and objects are assembled into a single MJCF model; <strong>(2) IK Solving</strong> — the target end-effector pose is converted into a joint-space goal; <strong>(3) Motion Planning</strong> — RRT searches for a collision-free waypoint sequence; <strong>(4) Trajectory Smoothing</strong> — waypoints are interpolated with quintic polynomials respecting velocity limits; <strong>(5) Physics Execution</strong> — the trajectory drives MuJoCo's actuators through the <code>mj_step</code> loop while gripper state is managed; and <strong>(6) Visualization</strong> — the evolving 3-D state is streamed to Rerun. The bundled <code>ExampleTaskManager</code> chains these into a full sequence: <em>approach → descend → grip → lift → transport → drop → retreat</em>.</p>
+                    </div>
+                </div>
+
+                <figure style="margin: 1.5rem 0 2rem;">
+                    <img src="media/images/project_pnp_sw_stack.png" alt="PnP Manipulation Stack — Software Architecture" style="width: 100%; height: auto; border-radius: 8px; border: 1px solid #ddd;">
+                    <figcaption>Software architecture of the manipulation stack: C++ engine (IK, RRT planner, trajectory generation, PD controller) bridged to the Python orchestration and scene-composition layer via PyBind11, with optional real-time 3-D telemetry streaming to the Rerun viewer.</figcaption>
+                </figure>
+
+                <h2>Key Algorithms</h2>
+                <div class="deep-dive-grid">
+                    <div class="dive-item">
+                        <h3><i class="fas fa-crosshairs"></i> Inverse Kinematics — Damped Least-Squares</h3>
+                        <p style="text-align: justify;">The IK solver builds the 6×n<sub>v</sub> Jacobian using MuJoCo's <code>mj_jacBody</code> / <code>mj_jacSite</code> and solves the damped normal equations
+                        <code>(JᵀJ + λ²I) Δq = Jᵀe</code> iteratively, refining the joint configuration while clamping to joint limits at every step. The damping term λ keeps the solver well-conditioned near singularities, trading a little tracking accuracy for numerical stability where an undamped pseudo-inverse would blow up.</p>
+                    </div>
+                    <div class="dive-item">
+                        <h3><i class="fas fa-project-diagram"></i> Motion Planning — Grasp-Aware RRT</h3>
+                        <p style="text-align: justify;">Planning runs as a <strong>Rapidly-exploring Random Tree</strong> in joint space with a 10% goal bias, querying MuJoCo's contact engine for validity. The collision logic is context-sensitive rather than naïve: environment-to-environment contacts are ignored, robot-to-object contacts are skipped during the approach phase, and — crucially — when the gripper is holding an object, the object's pose is snapped to the gripper before every collision check. This lets the planner reason about a grasped payload as part of the robot, avoiding the classic failure where a held object phantom-collides with the world or is ignored entirely.</p>
+                    </div>
+                    <div class="dive-item">
+                        <h3><i class="fas fa-wave-square"></i> Trajectory Smoothing — Quintic Polynomials</h3>
+                        <p style="text-align: justify;">Raw RRT waypoints are jagged and time-unaware. The trajectory generator fits <strong>quintic (5th-order) polynomials</strong> between them, producing C²-continuous motion with smooth position, velocity and acceleration profiles while honouring per-joint velocity limits — the difference between a path that exists and a trajectory a controller can actually track.</p>
+                    </div>
+                    <div class="dive-item">
+                        <h3><i class="fas fa-sliders-h"></i> Control — PD Torque Law</h3>
+                        <p style="text-align: justify;">Execution closes the loop with a per-joint PD torque controller,
+                        <code>τᵢ = k_p·(q_target[i] − q[i]) + k_d·(q̇_target[i] − q̇[i])</code>,
+                        computed each tick and applied to MuJoCo's actuators inside the <code>mj_step</code> integration loop. This drives the arm along the smoothed trajectory in a physically consistent simulation rather than teleporting joints to setpoints.</p>
+                    </div>
+                </div>
+
+                <h2>Scene Composition &amp; Mesh Handling</h2>
+                <div class="deep-dive-grid">
+                    <div class="dive-item">
+                        <h3><i class="fas fa-cubes"></i> Dynamic MJCF Assembly</h3>
+                        <p style="text-align: justify;">Rather than shipping a fixed world model, the <code>PySceneManager</code> composes scenes at runtime through the <strong>dm_control MJCF API</strong> — selecting a robot (UR5e, Panda, or xArm7), attaching a gripper (Robotiq 2F-85), and placing a table, tray and arbitrary objects. The same orchestrator (<code>PnpSystem</code>) therefore works across hardware without code changes; the robot and end-effector are simply parameters: <code>pnp.setup(robot_type="ur5e", ee_type="robotiq_2f85")</code>.</p>
+                    </div>
+                    <div class="dive-item">
+                        <h3><i class="fas fa-draw-polygon"></i> Robust STL Ingestion</h3>
+                        <p style="text-align: justify;">Custom objects loaded from STL files are processed automatically so the simulation stays performant and valid: ASCII meshes are detected and converted to binary, meshes exceeding 200,000 faces are decimated with <strong>Open3D</strong>, and an axis-aligned bounding box is computed to generate an invisible collision proxy. The visual mesh stays high-fidelity while the planner reasons against a cheap, reliable collision surrogate.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Supported Hardware -->
+            <section class="technical-deep-dive one-column-deep-dive">
+                <h2>Supported Robots &amp; End-Effectors</h2>
+                <div style="overflow-x: auto; margin-top: 1rem;">
+                    <table style="width: 100%; border-collapse: collapse; font-size: 0.95rem;">
+                        <thead>
+                            <tr style="background-color: #0d2c4e; color: white;">
+                                <th style="padding: 0.75rem 1rem; text-align: left; border: 1px solid #ddd;">Component</th>
+                                <th style="padding: 0.75rem 1rem; text-align: left; border: 1px solid #ddd;">Options</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td style="padding: 0.65rem 1rem; border: 1px solid #ddd;"><strong>Robot Arms</strong></td>
+                                <td style="padding: 0.65rem 1rem; border: 1px solid #ddd;">Universal Robots UR5e, Franka Panda, UFACTORY xArm7</td>
+                            </tr>
+                            <tr style="background-color: #f9f9f9;">
+                                <td style="padding: 0.65rem 1rem; border: 1px solid #ddd;"><strong>Grippers</strong></td>
+                                <td style="padding: 0.65rem 1rem; border: 1px solid #ddd;">Robotiq 2F-85, Robotiq 2F-85 v4</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 0.65rem 1rem; border: 1px solid #ddd;"><strong>Physics / Collision</strong></td>
+                                <td style="padding: 0.65rem 1rem; border: 1px solid #ddd;">MuJoCo ≥ 3.0.0</td>
+                            </tr>
+                            <tr style="background-color: #f9f9f9;">
+                                <td style="padding: 0.65rem 1rem; border: 1px solid #ddd;"><strong>Visualization</strong></td>
+                                <td style="padding: 0.65rem 1rem; border: 1px solid #ddd;">Rerun SDK (optional)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Example Usage -->
+            <section class="technical-deep-dive one-column-deep-dive">
+                <h2>Python API at a Glance</h2>
+                <p style="text-align: justify;">The whole stack collapses into a handful of high-level calls — robot selection, motion, and gripper control are one-liners, with the compiled C++ engine doing the heavy lifting underneath.</p>
+                <pre style="background-color: #0d2c4e; color: #e6edf3; padding: 1.25rem 1.5rem; border-radius: 8px; overflow-x: auto; font-size: 0.9rem; line-height: 1.6;"><code>from pnp import PnpSystem
+
+pnp = PnpSystem(use_rerun=True)
+pnp.setup(robot_type="ur5e", ee_type="robotiq_2f85")
+
+pnp.move_to_pose([0.5, 0.2, 0.3])   # IK + collision-free RRT + smoothed execution
+pnp.close_gripper(target_val=200.0) # grasp
+pnp.open_gripper()                  # release</code></pre>
+            </section>
+
+            <!-- Footer nav -->
+        </div>
+    </main>
+
+    <footer class="main-footer">
+        <div class="container">
+             <p><a href="projects.html" style="color: white; text-decoration: underline;">Back to All Projects</a></p>
+            <div class="social-icons">
+                <a href="mailto:f.n.heravi@gmail.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a>
+                <a href="https://www.linkedin.com/in/fheravi" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/farshad-heravi" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+            </div>
+            <p>&copy; 2025 Farshad Nozad Heravi</p>
+        </div>
+    </footer>
+
+<!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "00fa08e30eb342f49f66ea0161dc7675"}'></script><!-- End Cloudflare Web Analytics -->
+</body>
+</html>
